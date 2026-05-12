@@ -6,7 +6,7 @@
     <title>Пятый элемент Outsource</title>
     <meta
       name="description"
-      content="Площадка для публикации и обработки актуальных запросов на IT-аутсорсинг."
+      content="Площадка Пятого элемента для запросов на IT-аутсорсинг и предложений специалистов."
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -16,30 +16,21 @@
         <img src="assets/logo-5element.svg" alt="Пятый элемент" />
       </a>
       <nav class="nav" aria-label="Основная навигация">
-        <a href="#workflow">Процесс</a>
-        <a href="#roles">Роли</a>
+        <a href="#roles">Витрина</a>
         <a href="#request">Заявка</a>
       </nav>
-      <a class="header-action" href="#request">Запросить доступ</a>
+      <a class="header-action" href="#request" data-request-type="request">Предложить запрос</a>
     </header>
 
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow">5E Outsource</p>
-          <h1 id="hero-title">
-            Актуальные запросы
-            <br class="mobile-title-break" />на IT-аутсорсинг
-            <br class="mobile-title-break" />в одном месте
-          </h1>
+          <h1 id="hero-title">Витрина IT-аутсорсинга</h1>
           <p class="hero-lead">
-            Площадка для публикации ролей, приема кандидатов и фиксации статусов по каждому
-            запросу. Формат близок к привычной ленте: ID, направление, грейд, требования и текущий этап.
+            Публикуйте запросы, предлагайте специалистов и ведите статусы в одном корпоративном
+            контуре Пятого элемента.
           </p>
-          <div class="hero-actions" aria-label="Основные действия">
-            <a class="button primary" href="#request">Создать заявку</a>
-            <a class="button secondary" href="#roles">Посмотреть витрину</a>
-          </div>
+
           <dl class="hero-stats" aria-label="Ключевые показатели">
             <div>
               <dt>5 дней</dt>
@@ -51,99 +42,26 @@
             </div>
             <div>
               <dt>1 окно</dt>
-              <dd>для заявок и статусов</dd>
+              <dd>для заявки и статусов</dd>
             </div>
           </dl>
-        </div>
 
-        <div class="hero-visual" aria-label="Превью интерфейса платформы">
-          <div class="product-preview" aria-label="Мини-лента активных заявок">
-            <div class="preview-topbar">
-              <span>5E Outsource</span>
-              <strong>Активные заявки</strong>
-            </div>
-            <div class="preview-grid">
-              <aside class="preview-filter" aria-label="Фильтры">
-                <span class="filter-title">Направления</span>
-                <span class="filter-item active">Все</span>
-                <span class="filter-item">Frontend</span>
-                <span class="filter-item">Backend</span>
-                <span class="filter-item">QA</span>
-                <span class="filter-item">Analysts</span>
-                <span class="filter-item">DevOps</span>
-              </aside>
-              <div class="preview-list" tabindex="0" aria-label="Прокручиваемый список активных заявок">
-                <a class="request-row" href="#request-3770">
-                  <span class="request-id">ID 3770</span>
-                  <strong>BA analyst</strong>
-                  <span>Грейд: Senior · Analysts · full-time</span>
-                  <mark>новая</mark>
-                </a>
-                <a class="request-row" href="#request-3756">
-                  <span class="request-id">ID 3756</span>
-                  <strong>Tech lead Java developer</strong>
-                  <span>Грейд: Tech Lead · Backend · финтех</span>
-                  <mark>подбор</mark>
-                </a>
-                <a class="request-row" href="#request-3754">
-                  <span class="request-id">ID 3754</span>
-                  <strong>Team lead Java developer</strong>
-                  <span>Грейд: TL · Backend · интеграции</span>
-                  <mark>интервью</mark>
-                </a>
-                <a class="request-row" href="#request-3764">
-                  <span class="request-id">ID 3764</span>
-                  <strong>DevOps engineer</strong>
-                  <span>Грейд: Middle / Middle+ · Kubernetes</span>
-                  <mark>подбор</mark>
-                </a>
-                <a class="request-row" href="#request-3748">
-                  <span class="request-id">ID 3748</span>
-                  <strong>QA engineer</strong>
-                  <span>Грейд: Senior · регресс · API</span>
-                  <mark>резюме</mark>
-                </a>
-                <a class="request-row" href="#request-3752">
-                  <span class="request-id">ID 3752</span>
-                  <strong>React.js developer</strong>
-                  <span>Грейд: Senior · TypeScript · продукт</span>
-                  <mark>согласование</mark>
-                </a>
-              </div>
-            </div>
+          <div class="hero-actions" aria-label="Основные действия">
+            <a class="button primary" href="#request" data-request-type="request">Предложить запрос</a>
+            <a class="button primary" href="#request" data-request-type="specialist">
+              Предложить специалиста
+            </a>
           </div>
-          <img
-            class="brand-art"
-            src="assets/PurpleLaptopImage-CB2F8Ipp.png"
-            alt="Фирменная 3D-иллюстрация Пятого элемента"
-          />
         </div>
-      </section>
 
-      <section class="value-band" aria-labelledby="value-title">
-        <div class="section-heading">
-          <p class="eyebrow">Формат</p>
-          <h2 id="value-title">Лента запросов без лишних обещаний и презентационного шума</h2>
-        </div>
-        <div class="value-grid">
-          <article class="value-card">
-            <h3>Карточка запроса</h3>
-            <p>ID, роль, грейд, направление, формат занятости и короткое описание проекта.</p>
-          </article>
-          <article class="value-card">
-            <h3>Категории</h3>
-            <p>Frontend, Backend, Analysts, QA, DevOps и другие направления для быстрой фильтрации.</p>
-          </article>
-          <article class="value-card">
-            <h3>Статусы</h3>
-            <p>Новая заявка, подбор, резюме, интервью, согласование и закрытие запроса.</p>
-          </article>
+        <div class="hero-visual" aria-label="Фирменные 3D-кубы">
+          <img class="visual-cubes" src="assets/cubesBig-DT-yyV7Y.png" alt="" aria-hidden="true" />
+          <img class="visual-cube" src="assets/PurpleCube-B-9e4vRW.png" alt="" aria-hidden="true" />
         </div>
       </section>
 
       <section class="roles-section" id="roles" aria-labelledby="roles-title">
         <div class="section-heading">
-          <p class="eyebrow">Активные заявки</p>
           <h2 id="roles-title">Витрина ролей</h2>
         </div>
 
@@ -157,55 +75,108 @@
         </div>
 
         <div class="role-list" aria-live="polite">
-          <article class="role-card" id="request-3770" data-category="analyst">
+          <article
+            class="role-card"
+            id="request-3770"
+            data-category="analyst"
+            data-role-key="3770"
+            role="button"
+            tabindex="0"
+            aria-haspopup="dialog"
+          >
             <span class="role-id">ID 3770</span>
             <h3>BA analyst</h3>
-            <p>Грейд: Senior</p>
+            <p>Senior аналитик для описания бизнес-процессов и интеграционных требований.</p>
             <div class="role-meta">
               <span>Analysts · full-time</span>
               <span class="status">Новая</span>
             </div>
           </article>
-          <article class="role-card" id="request-3756" data-category="backend">
+
+          <article
+            class="role-card"
+            id="request-3756"
+            data-category="backend"
+            data-role-key="3756"
+            role="button"
+            tabindex="0"
+            aria-haspopup="dialog"
+          >
             <span class="role-id">ID 3756</span>
             <h3>Tech lead Java developer</h3>
-            <p>Грейд: Tech Lead</p>
+            <p>Технический лидер для финтех-команды, микросервисов и архитектурных решений.</p>
             <div class="role-meta">
               <span>Backend · финтех</span>
               <span class="status">Подбор</span>
             </div>
           </article>
-          <article class="role-card" id="request-3754" data-category="backend">
+
+          <article
+            class="role-card"
+            id="request-3754"
+            data-category="backend"
+            data-role-key="3754"
+            role="button"
+            tabindex="0"
+            aria-haspopup="dialog"
+          >
             <span class="role-id">ID 3754</span>
             <h3>Team lead Java developer</h3>
-            <p>Грейд: TL</p>
+            <p>Лид разработки для backend-команды, интеграций и сопровождения кодовой базы.</p>
             <div class="role-meta">
               <span>Backend · интеграции</span>
               <span class="status">Интервью</span>
             </div>
           </article>
-          <article class="role-card" id="request-3764" data-category="devops">
+
+          <article
+            class="role-card"
+            id="request-3764"
+            data-category="devops"
+            data-role-key="3764"
+            role="button"
+            tabindex="0"
+            aria-haspopup="dialog"
+          >
             <span class="role-id">ID 3764</span>
             <h3>DevOps engineer</h3>
-            <p>Грейд: Middle / Middle+</p>
+            <p>Инженер для поддержки Kubernetes-контуров, CI/CD и инфраструктурных релизов.</p>
             <div class="role-meta">
               <span>DevOps · Kubernetes</span>
               <span class="status">Подбор</span>
             </div>
           </article>
-          <article class="role-card" id="request-3748" data-category="qa">
+
+          <article
+            class="role-card"
+            id="request-3748"
+            data-category="qa"
+            data-role-key="3748"
+            role="button"
+            tabindex="0"
+            aria-haspopup="dialog"
+          >
             <span class="role-id">ID 3748</span>
             <h3>QA engineer</h3>
-            <p>Грейд: Senior</p>
+            <p>Senior QA для регресса, API-проверок и контроля качества релизного цикла.</p>
             <div class="role-meta">
               <span>QA · регресс и API</span>
               <span class="status">Резюме</span>
             </div>
           </article>
-          <article class="role-card" id="request-3752" data-category="frontend">
+
+          <article
+            class="role-card"
+            id="request-3752"
+            data-category="frontend"
+            data-role-key="3752"
+            role="button"
+            tabindex="0"
+            aria-haspopup="dialog"
+          >
             <span class="role-id">ID 3752</span>
             <h3>React.js developer</h3>
-            <p>Грейд: Senior</p>
+            <p>Senior frontend-разработчик для продуктовой команды на React и TypeScript.</p>
             <div class="role-meta">
               <span>Frontend · TypeScript</span>
               <span class="status">Согласование</span>
@@ -214,54 +185,56 @@
         </div>
       </section>
 
-      <section class="workflow" id="workflow" aria-labelledby="workflow-title">
-        <div class="section-heading">
-          <p class="eyebrow">Процесс</p>
-          <h2 id="workflow-title">Как проходит заявка</h2>
-        </div>
-        <ol class="workflow-list">
-          <li>
-            <span>01</span>
-            <h3>Публикация</h3>
-            <p>Выбирает роль, грейд, стек, формат работы, дедлайн и заказчика.</p>
-          </li>
-          <li>
-            <span>02</span>
-            <h3>Подбор</h3>
-            <p>Ответственный добавляет кандидатов и обновляет статус по запросу.</p>
-          </li>
-          <li>
-            <span>03</span>
-            <h3>Согласование</h3>
-            <p>Комментарии, интервью и решения фиксируются прямо в карточке кандидата.</p>
-          </li>
-          <li>
-            <span>04</span>
-            <h3>Выход на проект</h3>
-            <p>В карточке остаются дата старта, документы, ставка и история по заявке.</p>
-          </li>
-        </ol>
-      </section>
-
       <section class="request-section" id="request" aria-labelledby="request-title">
         <div class="request-copy">
-          <p class="eyebrow">Запуск</p>
-          <h2 id="request-title">MVP можно собрать вокруг реальной ленты запросов</h2>
+          <h2 id="request-title">Создать заявку</h2>
           <p>
-            На первом этапе достаточно публикации заявок, фильтров по направлениям, карточки кандидата
-            и статусов. Остальное лучше добавлять после проверки процесса на рабочих запросах.
+            Передайте в работу потребность по проекту или готового специалиста: форма сразу
+            фиксирует тип обращения, профиль, грейд, формат и контакт ответственного.
           </p>
-          <ul class="check-list">
-            <li>шаблоны заявок по направлениям;</li>
-            <li>единая карточка кандидата;</li>
-            <li>понятные статусы и SLA;</li>
-            <li>история решений по каждому запросу.</li>
-          </ul>
+
+          <div class="request-highlights" aria-label="Что фиксируем в заявке">
+            <article>
+              <span>01</span>
+              <strong>Роль и грейд</strong>
+              <p>Фиксируем профиль, уровень и формат занятости.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <strong>Контакт</strong>
+              <p>Оставляем ответственного для быстрой синхронизации.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <strong>Контекст</strong>
+              <p>Добавляем стек, сроки, ограничения и важные комментарии.</p>
+            </article>
+          </div>
         </div>
 
         <form class="request-form" aria-label="Форма заявки на платформу">
+          <fieldset class="request-type">
+            <legend>Тип обращения</legend>
+            <label class="type-option">
+              <input type="radio" name="type" value="request" checked />
+              <span class="type-marker" aria-hidden="true"></span>
+              <span>
+                <strong>Предложить запрос</strong>
+                <small>Нужен специалист под проект или команду</small>
+              </span>
+            </label>
+            <label class="type-option">
+              <input type="radio" name="type" value="specialist" />
+              <span class="type-marker" aria-hidden="true"></span>
+              <span>
+                <strong>Предложить специалиста</strong>
+                <small>Есть кандидат, которого можно подключить</small>
+              </span>
+            </label>
+          </fieldset>
+
           <label>
-            Роль
+            Роль или специализация
             <select name="role" required>
               <option value="">Выберите роль</option>
               <option>Frontend developer</option>
@@ -291,14 +264,52 @@
             </select>
           </label>
           <label>
-            Комментарий
-            <textarea name="comment" rows="4" placeholder="Стек, сроки, команда, важные ограничения"></textarea>
+            Контакт для связи
+            <input name="contact" type="text" placeholder="Имя, почта или Telegram" required />
           </label>
-          <button class="button primary full" type="submit">Зафиксировать заявку</button>
-          <p class="form-note" role="status">Заявка останется на странице как демонстрация сценария.</p>
+          <label>
+            Комментарий
+            <textarea
+              name="comment"
+              rows="4"
+              placeholder="Стек, сроки, команда, доступность кандидата или важные ограничения"
+            ></textarea>
+          </label>
+          <button class="button primary full" type="submit">Отправить запрос</button>
+          <p class="form-note" role="status">Выберите сценарий и заполните ключевые поля.</p>
         </form>
       </section>
     </main>
+
+    <div class="role-modal" id="role-modal" aria-hidden="true">
+      <div class="modal-backdrop" data-modal-close></div>
+      <section
+        class="modal-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-role-title"
+        tabindex="-1"
+      >
+        <button class="modal-close" type="button" data-modal-close aria-label="Закрыть карточку">
+          ×
+        </button>
+        <span class="modal-id" id="modal-role-id"></span>
+        <h2 id="modal-role-title"></h2>
+        <p class="modal-summary" id="modal-role-summary"></p>
+        <div class="modal-meta" aria-label="Параметры заявки">
+          <span id="modal-role-grade"></span>
+          <span id="modal-role-area"></span>
+          <span id="modal-role-status"></span>
+        </div>
+        <div class="modal-requirements">
+          <h3>Требования</h3>
+          <ul id="modal-role-requirements"></ul>
+        </div>
+        <a class="button primary full modal-action" href="#request" data-request-type="specialist">
+          Предложить кандидата
+        </a>
+      </section>
+    </div>
 
     <footer class="site-footer">
       <img src="assets/logo-5element.svg" alt="Пятый элемент" />
