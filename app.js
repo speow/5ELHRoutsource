@@ -123,6 +123,8 @@ const roleOptions = [
   "РНР-разработчик (Fullstack)",
   "RPA разработчик",
   "SQL-разработчик",
+  "Team Lead",
+  "Tech Lead",
   "Автотестер",
   "Автотестировщик (Java)",
   "Автотестировщик (JavaScript)",

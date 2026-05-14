@@ -899,11 +899,11 @@ h3 {
 }
 
 .footer-contacts {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
-  justify-content: space-between;
   min-width: 0;
-  gap: 10px;
+  gap: 0;
   padding: 12px;
   border: 1px solid rgba(213, 201, 255, 0.14);
   border-radius: 8px;
@@ -916,16 +916,20 @@ h3 {
   display: flex;
   align-items: center;
   gap: 10px;
+  justify-content: flex-start;
   min-width: 0;
-  padding-left: 10px;
-  border-left: 1px solid rgba(213, 201, 255, 0.12);
   color: var(--muted);
   line-height: 1.2;
 }
 
 .footer-contact:first-child {
-  border-left: 0;
-  padding-left: 0;
+  justify-content: flex-end;
+  padding-right: 14px;
+}
+
+.footer-contact + .footer-contact {
+  padding-left: 14px;
+  border-left: 1px solid rgba(213, 201, 255, 0.12);
 }
 
 .footer-contact-person {
@@ -1296,6 +1300,7 @@ h3 {
 
   .footer-contacts {
     display: grid;
+    grid-template-columns: 1fr;
     gap: 2px;
   }
 
@@ -1303,8 +1308,14 @@ h3 {
     gap: 12px;
     min-width: 0;
     padding-left: 0;
+    padding-right: 0;
     border-left: 0;
     border-top: 1px solid rgba(213, 201, 255, 0.12);
+  }
+
+  .footer-contact + .footer-contact {
+    padding-left: 0;
+    border-left: 0;
   }
 
   .footer-contact:first-child {
