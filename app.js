@@ -5,7 +5,7 @@ const roleData = {
     summary: "Senior аналитик для описания бизнес-процессов, интеграций и требований к продуктовой команде.",
     grade: "Senior",
     area: "Analysts · full-time",
-    status: "Новая",
+    status: "Свободен",
     requirements: [
       "Опыт бизнес-анализа и системного анализа от 4 лет.",
       "Уверенная работа с BPMN, UML, пользовательскими сценариями и требованиями.",
@@ -20,7 +20,7 @@ const roleData = {
     summary: "Технический лидер для финтех-команды, микросервисной архитектуры и инженерных решений.",
     grade: "Tech Lead",
     area: "Backend · финтех",
-    status: "Подбор",
+    status: "На проекте",
     requirements: [
       "Java 17, Spring Boot, Spring Cloud и опыт промышленной backend-разработки от 6 лет.",
       "Проектирование микросервисов, API-контрактов и отказоустойчивых интеграций.",
@@ -50,7 +50,7 @@ const roleData = {
     summary: "Инженер для поддержки Kubernetes-контуров, CI/CD и инфраструктурных релизов.",
     grade: "Middle / Middle+",
     area: "DevOps · Kubernetes",
-    status: "Подбор",
+    status: "На проекте",
     requirements: [
       "Администрирование Linux и сопровождение production-инфраструктуры.",
       "Kubernetes, Helm, Docker и опыт эксплуатации контейнерных сервисов.",
@@ -65,7 +65,7 @@ const roleData = {
     summary: "Senior QA для регресса, API-проверок и контроля качества релизного цикла.",
     grade: "Senior",
     area: "QA · регресс и API",
-    status: "Резюме",
+    status: "Свободен",
     requirements: [
       "Опыт функционального и регрессионного тестирования от 4 лет.",
       "Уверенное тестирование REST API через Postman, Swagger или аналогичные инструменты.",
@@ -80,7 +80,7 @@ const roleData = {
     summary: "Senior frontend-разработчик для продуктовой команды на React и TypeScript.",
     grade: "Senior",
     area: "Frontend · TypeScript",
-    status: "Согласование",
+    status: "На проекте",
     requirements: [
       "React, TypeScript и опыт коммерческой frontend-разработки от 4 лет.",
       "Работа с состоянием приложения, формами, валидацией и REST API.",
@@ -90,6 +90,86 @@ const roleData = {
     ],
   },
 };
+
+const roleOptions = [
+  "1С-аналитик",
+  "1С-разработчик",
+  "1С-Руководитель проекта",
+  "1С-тестировщик",
+  "Android-разработчик",
+  "Back-end Developer",
+  "ВІ-разработчик",
+  "Data/BI analyst",
+  "Data Engineer",
+  "Data Scientist",
+  "DBA",
+  "DevOps",
+  "DWH analyst",
+  "Flutter разработчик",
+  "Frontend",
+  "Fullstack разработчик",
+  "Full-stak тестировщик (C#)",
+  "Full-stak тестировщик (Java)",
+  "Full-stak тестировщик (Python)",
+  "Golang-разработчик",
+  "Growth-manager",
+  "iOS-разработчик",
+  "Jira developer",
+  "Low-code разработчик ELMA",
+  "ML Engineer",
+  "MLOps Engineer",
+  ".NET",
+  "РНР-разработчик",
+  "РНР-разработчик (Fullstack)",
+  "RPA разработчик",
+  "SQL-разработчик",
+  "Автотестер",
+  "Автотестировщик (Java)",
+  "Автотестировщик (JavaScript)",
+  "Автотестировщик (Python)",
+  "Аналитик",
+  "Аналитик ELMA",
+  "Аналитик OEBS",
+  "Аналитик Siebel",
+  "Аналитик ИБ",
+  "Архитектор",
+  "Бизнес-аналитик",
+  "Дизайнер",
+  "Инженер тех. поддержки",
+  "Иное",
+  "ИТ лидер",
+  "Консультант SAP BW",
+  "Консультант SAP MM/LO/LE",
+  "Консультант SAP TM",
+  "Нагрузочное тестирование",
+  "Продуктовый аналитик",
+  "Разработчик АВАР",
+  "Разработчик ВPMSoft",
+  "Разработчик С#",
+  "Разработчик С++",
+  "Разработчик ELMA",
+  "Разработчик Front (Angular)",
+  "Разработчик ELMA",
+  "Разработчик Front (Angular)",
+  "Разработчик Front (React)",
+  "Разработчик Front (Vue)",
+  "Разработчик Java",
+  "Разработчик OEBS",
+  "Разработчик Python",
+  "Разработчик Siebel",
+  "Разработчик SQL",
+  "Разработчик Unity AR",
+  "Разработчик ЦФТ",
+  "Риск менеджер",
+  "Руководитель проекта",
+  "Ручной тестировщик",
+  "Системный аналитик",
+  "Системный Аналитик DWH",
+  "Специалист UI/UX",
+  "Специалист по разметке данных",
+  "Специалист сопровождения ПО",
+  "Технический писатель",
+];
 
 const tabs = document.querySelectorAll(".tab");
 const roleCards = document.querySelectorAll(".role-card");
@@ -116,6 +196,21 @@ const revealTargets = document.querySelectorAll(
 );
 
 let lastFocusedElement = null;
+
+function populateRoleOptions() {
+  const roleSelect = form?.querySelector('select[name="role"]');
+
+  if (!roleSelect || roleOptions.length === 0) {
+    return;
+  }
+
+  roleOptions.forEach((role) => {
+    const option = document.createElement("option");
+    option.value = role;
+    option.textContent = role;
+    roleSelect.append(option);
+  });
+}
 
 function syncRequestTypeStyles() {
   requestTypeOptions.forEach((option) => {
@@ -253,11 +348,12 @@ form?.addEventListener("submit", (event) => {
   formNote.textContent =
     type === "specialist"
       ? `Специалист по направлению «${role}» зафиксирован. В рабочем контуре он уйдет ответственному за подбор.`
-      : `Запрос на роль «${role}» зафиксирован. В рабочем контуре он появится в витрине со статусом «Новая».`;
+      : `Запрос на роль «${role}» зафиксирован. В рабочем контуре он появится в витрине со статусом «Свободен».`;
   formNote.classList.add("success");
 });
 
 syncRequestTypeStyles();
+populateRoleOptions();
 
 revealTargets.forEach((element, index) => {
   element.classList.add("reveal", `reveal-delay-${(index % 4) || 1}`);
