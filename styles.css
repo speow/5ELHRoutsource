@@ -107,7 +107,7 @@ fieldset {
   top: 16px;
   z-index: 20;
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: 1fr auto;
   align-items: center;
   gap: 24px;
   width: min(var(--max), calc(100% - 40px));
