@@ -17,7 +17,6 @@
       </a>
       <nav class="nav" aria-label="Основная навигация">
         <a href="#roles">Витрина</a>
-        <a href="#request">Заявка</a>
       </nav>
       <a class="header-action" href="#request" data-request-type="request">Предложить запрос</a>
     </header>
@@ -89,7 +88,7 @@
             <p>Senior аналитик для описания бизнес-процессов и интеграционных требований.</p>
             <div class="role-meta">
               <span>Analysts · full-time</span>
-              <span class="status">Новая</span>
+              <span class="status">Свободен</span>
             </div>
           </article>
 
@@ -107,7 +106,7 @@
             <p>Технический лидер для финтех-команды, микросервисов и архитектурных решений.</p>
             <div class="role-meta">
               <span>Backend · финтех</span>
-              <span class="status">Подбор</span>
+              <span class="status">На проекте</span>
             </div>
           </article>
 
@@ -143,7 +142,7 @@
             <p>Инженер для поддержки Kubernetes-контуров, CI/CD и инфраструктурных релизов.</p>
             <div class="role-meta">
               <span>DevOps · Kubernetes</span>
-              <span class="status">Подбор</span>
+              <span class="status">На проекте</span>
             </div>
           </article>
 
@@ -161,7 +160,7 @@
             <p>Senior QA для регресса, API-проверок и контроля качества релизного цикла.</p>
             <div class="role-meta">
               <span>QA · регресс и API</span>
-              <span class="status">Резюме</span>
+              <span class="status">Свободен</span>
             </div>
           </article>
 
@@ -179,7 +178,7 @@
             <p>Senior frontend-разработчик для продуктовой команды на React и TypeScript.</p>
             <div class="role-meta">
               <span>Frontend · TypeScript</span>
-              <span class="status">Согласование</span>
+              <span class="status">На проекте</span>
             </div>
           </article>
         </div>
@@ -210,6 +209,11 @@
               <p>Добавляем стек, сроки, ограничения и важные комментарии.</p>
             </article>
           </div>
+
+          <div class="request-stars" aria-hidden="true">
+            <img class="request-star request-star-left" src="https://5-element.tech/assets/Star-B4tby_Ye.png" alt="" />
+            <img class="request-star request-star-right" src="https://5-element.tech/assets/Star-B4tby_Ye.png" alt="" />
+          </div>
         </div>
 
         <form class="request-form" aria-label="Форма заявки на платформу">
@@ -234,23 +238,40 @@
           </fieldset>
 
           <label>
+            Имя
+            <input name="name" type="text" placeholder="Ваше имя" required />
+          </label>
+          <label>
             Роль или специализация
             <select name="role" required>
               <option value="">Выберите роль</option>
-              <option>Frontend developer</option>
-              <option>Backend developer</option>
-              <option>QA engineer</option>
-              <option>Systems analyst</option>
-              <option>DevOps engineer</option>
             </select>
+          </label>
+          <label>
+            Локация
+            <select name="location" required>
+              <option value="">Выберите локацию</option>
+              <option>РФ</option>
+              <option>РБ</option>
+              <option>KZ</option>
+              <option>Другая</option>
+            </select>
+          </label>
+          <label>
+            Ставка
+            <input name="rate" type="text" placeholder="Например: 3500 в час" required />
           </label>
           <label>
             Грейд
             <select name="grade" required>
               <option value="">Выберите грейд</option>
+              <option>Trainee</option>
+              <option>Junior</option>
+              <option>Junior+</option>
               <option>Middle</option>
               <option>Middle+</option>
               <option>Senior</option>
+              <option>Senior+</option>
               <option>Tech Lead</option>
             </select>
           </label>
@@ -264,16 +285,17 @@
             </select>
           </label>
           <label>
-            Контакт для связи
-            <input name="contact" type="text" placeholder="Имя, почта или Telegram" required />
+            Описание проекта
+            <textarea
+              name="project"
+              rows="4"
+              placeholder="Стек, сроки, команда, ограничения и контекст проекта"
+              required
+            ></textarea>
           </label>
           <label>
-            Комментарий
-            <textarea
-              name="comment"
-              rows="4"
-              placeholder="Стек, сроки, команда, доступность кандидата или важные ограничения"
-            ></textarea>
+            Контакт для связи
+            <input name="contact" type="text" placeholder="Telegram или e-mail" required />
           </label>
           <button class="button primary full" type="submit">Отправить запрос</button>
           <p class="form-note" role="status">Выберите сценарий и заполните ключевые поля.</p>
