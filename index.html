@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Пятый элемент Outsource</title>
+    <title>Пятый элемент Outsource | Витрина специалистов</title>
     <meta
       name="description"
-      content="Площадка Пятого элемента для запросов на IT-аутсорсинг и предложений специалистов."
+      content="Актуальная витрина доступных IT-специалистов Пятого элемента для партнеров: грейд, специализация, ставка, статус, CV и быстрый контакт в Telegram."
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -15,360 +15,172 @@
       <a class="brand" href="#top" aria-label="Пятый элемент">
         <img src="assets/logo-5element.svg" alt="Пятый элемент" />
       </a>
-      <a class="header-action" href="#roles">Витрина</a>
+      <nav class="header-nav" aria-label="Навигация">
+        <a href="#bench">Специалисты</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <a
+        class="header-action"
+        href="https://t.me/lavrova_stacy"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Telegram
+      </a>
     </header>
 
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <h1 id="hero-title">Витрина IT-аутсорсинга</h1>
+          <p class="eyebrow">Bench Пятого элемента</p>
+          <h1 id="hero-title">Витрина IT-специалистов для партнеров</h1>
           <p class="hero-lead">
-            Публикуйте запросы, предлагайте специалистов и ведите статусы в одном корпоративном
-            контуре Пятого элемента.
+            Актуальные кандидаты из Бенча с грейдом, ставкой, статусом, CV и прямым контактом менеджера в Telegram.
           </p>
 
-          <dl class="hero-stats" aria-label="Ключевые показатели">
+          <dl class="hero-stats" aria-label="Сводка по витрине">
             <div>
-              <dt>5 дней</dt>
-              <dd>ориентир на старт</dd>
+              <dt id="stat-total">0</dt>
+              <dd>специалистов в витрине</dd>
             </div>
             <div>
-              <dt>100+</dt>
-              <dd>специалистов в пуле</dd>
+              <dt id="stat-free">0</dt>
+              <dd>свободны сейчас</dd>
             </div>
             <div>
-              <dt>1 окно</dt>
-              <dd>для заявки и статусов</dd>
+              <dt>2</dt>
+              <dd>аккаунт-менеджера на связи</dd>
             </div>
           </dl>
-
-          <div class="hero-actions" aria-label="Основные действия">
-            <a class="button primary" href="#request" data-request-type="request">Предложить запрос</a>
-            <a class="button primary" href="#request" data-request-type="specialist">
-              Предложить специалиста
-            </a>
-          </div>
         </div>
 
-        <div class="hero-visual" aria-label="Фирменные 3D-кубы">
-          <img class="visual-cubes" src="assets/cubesBig-DT-yyV7Y.png" alt="" aria-hidden="true" />
-          <img class="visual-cube" src="assets/PurpleCube-B-9e4vRW.png" alt="" aria-hidden="true" />
+        <div class="hero-visual" aria-hidden="true">
+          <img class="visual-cubes" src="assets/cubesBig-DT-yyV7Y.png" alt="" />
+          <img class="visual-cube" src="assets/PurpleCube-B-9e4vRW.png" alt="" />
+          <img class="hero-star hero-star-top" src="https://5-element.tech/assets/Star-B4tby_Ye.png" alt="" />
+          <img class="hero-star hero-star-bottom" src="https://5-element.tech/assets/Star-B4tby_Ye.png" alt="" />
         </div>
       </section>
 
-      <section class="roles-section" id="roles" aria-labelledby="roles-title">
+      <section class="bench-section" id="bench" aria-labelledby="bench-title">
         <div class="section-heading">
-          <h2 id="roles-title">Витрина ролей</h2>
-        </div>
-
-        <div class="role-tabs" aria-label="Фильтр ролей">
-          <button class="tab active" type="button" data-filter="all">Все</button>
-          <button class="tab" type="button" data-filter="frontend">Frontend</button>
-          <button class="tab" type="button" data-filter="backend">Backend</button>
-          <button class="tab" type="button" data-filter="qa">QA</button>
-          <button class="tab" type="button" data-filter="analyst">Analysts</button>
-          <button class="tab" type="button" data-filter="devops">DevOps</button>
-        </div>
-
-        <div class="role-list" aria-live="polite">
-          <article
-            class="role-card"
-            id="request-3770"
-            data-category="analyst"
-            data-role-key="3770"
-            role="button"
-            tabindex="0"
-            aria-haspopup="dialog"
-          >
-            <span class="role-id">ID 3770</span>
-            <h3>BA analyst</h3>
-            <p>Senior аналитик для описания бизнес-процессов и интеграционных требований.</p>
-            <div class="role-meta">
-              <span>Analysts · full-time</span>
-              <span class="status">Свободен</span>
-            </div>
-          </article>
-
-          <article
-            class="role-card"
-            id="request-3756"
-            data-category="backend"
-            data-role-key="3756"
-            role="button"
-            tabindex="0"
-            aria-haspopup="dialog"
-          >
-            <span class="role-id">ID 3756</span>
-            <h3>Tech lead Java developer</h3>
-            <p>Технический лидер для финтех-команды, микросервисов и архитектурных решений.</p>
-            <div class="role-meta">
-              <span>Backend · финтех</span>
-              <span class="status">На проекте</span>
-            </div>
-          </article>
-
-          <article
-            class="role-card"
-            id="request-3754"
-            data-category="backend"
-            data-role-key="3754"
-            role="button"
-            tabindex="0"
-            aria-haspopup="dialog"
-          >
-            <span class="role-id">ID 3754</span>
-            <h3>Team lead Java developer</h3>
-            <p>Лид разработки для backend-команды, интеграций и сопровождения кодовой базы.</p>
-            <div class="role-meta">
-              <span>Backend · интеграции</span>
-              <span class="status">Интервью</span>
-            </div>
-          </article>
-
-          <article
-            class="role-card"
-            id="request-3764"
-            data-category="devops"
-            data-role-key="3764"
-            role="button"
-            tabindex="0"
-            aria-haspopup="dialog"
-          >
-            <span class="role-id">ID 3764</span>
-            <h3>DevOps engineer</h3>
-            <p>Инженер для поддержки Kubernetes-контуров, CI/CD и инфраструктурных релизов.</p>
-            <div class="role-meta">
-              <span>DevOps · Kubernetes</span>
-              <span class="status">На проекте</span>
-            </div>
-          </article>
-
-          <article
-            class="role-card"
-            id="request-3748"
-            data-category="qa"
-            data-role-key="3748"
-            role="button"
-            tabindex="0"
-            aria-haspopup="dialog"
-          >
-            <span class="role-id">ID 3748</span>
-            <h3>QA engineer</h3>
-            <p>Senior QA для регресса, API-проверок и контроля качества релизного цикла.</p>
-            <div class="role-meta">
-              <span>QA · регресс и API</span>
-              <span class="status">Свободен</span>
-            </div>
-          </article>
-
-          <article
-            class="role-card"
-            id="request-3752"
-            data-category="frontend"
-            data-role-key="3752"
-            role="button"
-            tabindex="0"
-            aria-haspopup="dialog"
-          >
-            <span class="role-id">ID 3752</span>
-            <h3>React.js developer</h3>
-            <p>Senior frontend-разработчик для продуктовой команды на React и TypeScript.</p>
-            <div class="role-meta">
-              <span>Frontend · TypeScript</span>
-              <span class="status">На проекте</span>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="request-section" id="request" aria-labelledby="request-title">
-        <div class="request-copy">
-          <h2 id="request-title">Создать заявку</h2>
+          <div>
+            <p class="eyebrow">Актуальный Бенч</p>
+            <h2 id="bench-title">Специалисты</h2>
+          </div>
           <p>
-            Передайте в работу потребность по проекту или готового специалиста: форма сразу
-            фиксирует тип обращения, профиль, грейд, формат и контакт ответственного.
+            Все строки собраны из актуального Бенча: доступность, ставка, CV и контакт менеджера видны сразу в одной витрине.
           </p>
+        </div>
 
-          <div class="request-highlights" aria-label="Что фиксируем в заявке">
-            <article>
-              <span>01</span>
-              <strong>Роль и грейд</strong>
-              <p>Фиксируем профиль, уровень и формат занятости.</p>
-            </article>
-            <article>
-              <span>02</span>
-              <strong>Контакт</strong>
-              <p>Оставляем ответственного для быстрой синхронизации.</p>
-            </article>
-            <article>
-              <span>03</span>
-              <strong>Контекст</strong>
-              <p>Добавляем стек, сроки, ограничения и важные комментарии.</p>
-            </article>
+        <div class="bench-toolbar" aria-label="Фильтры витрины">
+          <label class="search-field">
+            <span>Поиск</span>
+            <input id="bench-search" type="search" placeholder="Имя, специализация, стек" autocomplete="off" />
+          </label>
+
+          <div class="filter-group" aria-label="Фильтр по направлению">
+            <button class="filter-chip active" type="button" data-filter-type="category" data-filter-value="all">Все</button>
+            <button class="filter-chip" type="button" data-filter-type="category" data-filter-value="QA">QA</button>
+            <button class="filter-chip" type="button" data-filter-type="category" data-filter-value="Backend">Backend</button>
+            <button class="filter-chip" type="button" data-filter-type="category" data-filter-value="Frontend">Frontend</button>
+            <button class="filter-chip" type="button" data-filter-type="category" data-filter-value="Дизайн">Дизайн</button>
+            <button class="filter-chip" type="button" data-filter-type="category" data-filter-value="Аналитика">Аналитика</button>
+            <button class="filter-chip" type="button" data-filter-type="category" data-filter-value="DevOps">DevOps</button>
+            <button class="filter-chip" type="button" data-filter-type="category" data-filter-value="PM">PM</button>
           </div>
 
-          <div class="request-stars" aria-hidden="true">
-            <img class="request-star request-star-left" src="https://5-element.tech/assets/Star-B4tby_Ye.png" alt="" />
-            <img class="request-star request-star-right" src="https://5-element.tech/assets/Star-B4tby_Ye.png" alt="" />
+          <div class="filter-group" aria-label="Фильтр по статусу">
+            <button class="filter-chip subtle active" type="button" data-filter-type="status" data-filter-value="all">Все статусы</button>
+            <button class="filter-chip subtle" type="button" data-filter-type="status" data-filter-value="Свободен">Свободен</button>
+            <button class="filter-chip subtle" type="button" data-filter-type="status" data-filter-value="На проекте">На проекте</button>
+            <button class="filter-chip subtle" type="button" data-filter-type="status" data-filter-value="Интервью">Интервью</button>
           </div>
         </div>
 
-        <form class="request-form" aria-label="Форма заявки на платформу">
-          <fieldset class="request-type">
-            <legend>Тип обращения</legend>
-            <label class="type-option">
-              <input type="radio" name="type" value="request" checked />
-              <span class="type-marker" aria-hidden="true"></span>
-              <span>
-                <strong>Предложить запрос</strong>
-                <small>Нужен специалист под проект или команду</small>
-              </span>
-            </label>
-            <label class="type-option">
-              <input type="radio" name="type" value="specialist" />
-              <span class="type-marker" aria-hidden="true"></span>
-              <span>
-                <strong>Предложить специалиста</strong>
-                <small>Есть кандидат, которого можно подключить</small>
-              </span>
-            </label>
-          </fieldset>
+        <div class="bench-summary" aria-live="polite">
+          <span id="bench-counter">Показаны все специалисты</span>
+          <span>Источник: Бенч от 28 мая 2026</span>
+        </div>
 
-          <label>
-            Имя
-            <input name="name" type="text" placeholder="Ваше имя" required />
-          </label>
-          <label>
-            Роль или специализация
-            <select name="role" required>
-              <option value="">Выберите роль</option>
-            </select>
-          </label>
-          <label>
-            Локация
-            <select name="location" required>
-              <option value="">Выберите локацию</option>
-              <option>РФ</option>
-              <option>РБ</option>
-              <option>KZ</option>
-              <option>Другая</option>
-            </select>
-          </label>
-          <label>
-            Ставка
-            <input name="rate" type="text" placeholder="Например: 3500 в час" required />
-          </label>
-          <label>
-            Грейд
-            <select name="grade" required>
-              <option value="">Выберите грейд</option>
-              <option>Trainee</option>
-              <option>Junior</option>
-              <option>Junior+</option>
-              <option>Middle</option>
-              <option>Middle+</option>
-              <option>Senior</option>
-              <option>Senior+</option>
-              <option>Team Lead</option>
-              <option>Tech Lead</option>
-            </select>
-          </label>
-          <label>
-            Формат
-            <select name="format" required>
-              <option value="">Выберите формат</option>
-              <option>Удаленно</option>
-              <option>Гибрид</option>
-              <option>Офис</option>
-            </select>
-          </label>
-          <label>
-            Описание проекта
-            <textarea
-              name="project"
-              rows="4"
-              placeholder="Стек, сроки, команда, ограничения и контекст проекта"
-              required
-            ></textarea>
-          </label>
-          <label>
-            Контакт для связи
-            <input name="contact" type="text" placeholder="Telegram или e-mail" required />
-          </label>
-          <button class="button primary full" type="submit">Отправить запрос</button>
-          <p class="form-note" role="status">Выберите сценарий и заполните ключевые поля.</p>
-        </form>
+        <div class="bench-table-wrap">
+          <table class="bench-table">
+            <thead>
+              <tr>
+                <th scope="col">Специалист</th>
+                <th scope="col">Грейд</th>
+                <th scope="col">Специализация</th>
+                <th scope="col">Локация</th>
+                <th scope="col">Ставка</th>
+                <th scope="col">Опыт</th>
+                <th scope="col">Статус</th>
+                <th scope="col">CV</th>
+                <th scope="col">Письмо</th>
+                <th scope="col">Контакт</th>
+              </tr>
+            </thead>
+            <tbody id="bench-body"></tbody>
+          </table>
+          <p class="empty-state" id="empty-state" hidden>По выбранным фильтрам специалистов не найдено.</p>
+        </div>
       </section>
     </main>
 
-    <div class="role-modal" id="role-modal" aria-hidden="true">
+    <div class="letter-modal" id="letter-modal" aria-hidden="true">
       <div class="modal-backdrop" data-modal-close></div>
       <section
         class="modal-dialog"
         role="dialog"
         aria-modal="true"
-        aria-labelledby="modal-role-title"
+        aria-labelledby="letter-modal-title"
         tabindex="-1"
       >
-        <button class="modal-close" type="button" data-modal-close aria-label="Закрыть карточку">
+        <button class="modal-close" type="button" data-modal-close aria-label="Закрыть сопроводительное письмо">
           ×
         </button>
-        <span class="modal-id" id="modal-role-id"></span>
-        <h2 id="modal-role-title"></h2>
-        <p class="modal-summary" id="modal-role-summary"></p>
-        <div class="modal-meta" aria-label="Параметры заявки">
-          <span id="modal-role-grade"></span>
-          <span id="modal-role-area"></span>
-          <span id="modal-role-status"></span>
-        </div>
-        <div class="modal-requirements">
-          <h3>Требования</h3>
-          <ul id="modal-role-requirements"></ul>
-        </div>
-        <a class="button primary full modal-action" href="#request" data-request-type="request">
-          Предложить запрос
-        </a>
+        <h2 id="letter-modal-title">Сопроводительное письмо специалиста</h2>
+        <p class="letter-text" id="letter-modal-text"></p>
       </section>
     </div>
 
-    <footer class="site-footer">
+    <footer class="site-footer" id="contacts">
       <div class="footer-brand">
         <img src="assets/logo-5element.svg" alt="Пятый элемент" />
-        <span class="footer-caption">Платформа аутсорсинга IT-специалистов</span>
+        <span class="footer-caption">Витрина IT-специалистов для партнеров</span>
       </div>
       <section class="footer-contact-group" aria-labelledby="footer-contact-title">
         <span class="footer-caption footer-contact-title" id="footer-contact-title">
-          Контакты для связи с нашими специалистами
+          Для бронирования специалиста напишите аккаунт-менеджерам в Telegram
         </span>
-        <div class="footer-contacts" aria-label="Контакты для связи с нашими специалистами в Telegram">
+        <div class="footer-contacts" aria-label="Контакты аккаунт-менеджеров в Telegram">
           <div class="footer-contact">
             <span class="footer-contact-person">
               <span class="footer-contact-name">Лаврова Анастасия</span>
-              <span class="footer-contact-role">HR-менеджер</span>
+              <span class="footer-contact-role">Аккаунт-менеджер</span>
             </span>
             <a
               class="footer-contact-action"
               href="https://t.me/lavrova_stacy"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Связаться с HR-менеджером Лавровой Анастасией в Telegram"
+              aria-label="Связаться с Лавровой Анастасией в Telegram"
             >
-              Связаться
+              Написать
             </a>
           </div>
           <div class="footer-contact">
             <span class="footer-contact-person">
               <span class="footer-contact-name">Волкова Екатерина</span>
-              <span class="footer-contact-role">HR-менеджер</span>
+              <span class="footer-contact-role">Аккаунт-менеджер</span>
             </span>
             <a
               class="footer-contact-action"
               href="https://t.me/sherlie221"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Связаться с HR-менеджером Волковой Екатериной в Telegram"
+              aria-label="Связаться с Волковой Екатериной в Telegram"
             >
-              Связаться
+              Написать
             </a>
           </div>
         </div>

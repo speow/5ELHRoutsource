@@ -1,261 +1,444 @@
-const roleData = {
-  3770: {
-    id: "ID 3770",
-    title: "BA analyst",
-    summary: "Senior аналитик для описания бизнес-процессов, интеграций и требований к продуктовой команде.",
-    grade: "Senior",
-    area: "Analysts · full-time",
-    status: "Свободен",
-    requirements: [
-      "Опыт бизнес-анализа и системного анализа от 4 лет.",
-      "Уверенная работа с BPMN, UML, пользовательскими сценариями и требованиями.",
-      "Понимание интеграций REST/SOAP и базовые навыки SQL.",
-      "Опыт взаимодействия с заказчиками, разработкой и QA в Agile-командах.",
-      "Умение быстро уточнять спорные требования и фиксировать договоренности.",
-    ],
+const managers = {
+  anastasia: {
+    name: "Анастасия Лаврова",
+    telegram: "https://t.me/lavrova_stacy",
   },
-  3756: {
-    id: "ID 3756",
-    title: "Tech lead Java developer",
-    summary: "Технический лидер для финтех-команды, микросервисной архитектуры и инженерных решений.",
-    grade: "Tech Lead",
-    area: "Backend · финтех",
-    status: "На проекте",
-    requirements: [
-      "Java 17, Spring Boot, Spring Cloud и опыт промышленной backend-разработки от 6 лет.",
-      "Проектирование микросервисов, API-контрактов и отказоустойчивых интеграций.",
-      "Практический опыт с PostgreSQL, Kafka, Docker и Kubernetes.",
-      "Техническое лидерство: ревью, декомпозиция задач, развитие инженерных практик.",
-      "Умение обсуждать архитектуру с бизнесом, аналитиками и смежными командами.",
-    ],
-  },
-  3754: {
-    id: "ID 3754",
-    title: "Team lead Java developer",
-    summary: "Лид разработки для backend-команды, интеграционного контура и сопровождения кодовой базы.",
-    grade: "Team Lead",
-    area: "Backend · интеграции",
-    status: "Интервью",
-    requirements: [
-      "Java, Spring Framework, REST API и опыт backend-разработки от 5 лет.",
-      "Управление небольшой командой разработки и контроль качества поставки.",
-      "Код-ревью, постановка задач и техническая декомпозиция требований.",
-      "Работа с PostgreSQL, Kafka или аналогичными брокерами сообщений.",
-      "Опыт поддержки интеграционных решений в продуктивной среде.",
-    ],
-  },
-  3764: {
-    id: "ID 3764",
-    title: "DevOps engineer",
-    summary: "Инженер для поддержки Kubernetes-контуров, CI/CD и инфраструктурных релизов.",
-    grade: "Middle / Middle+",
-    area: "DevOps · Kubernetes",
-    status: "На проекте",
-    requirements: [
-      "Администрирование Linux и сопровождение production-инфраструктуры.",
-      "Kubernetes, Helm, Docker и опыт эксплуатации контейнерных сервисов.",
-      "Настройка CI/CD-пайплайнов и автоматизация релизных процессов.",
-      "Terraform или Ansible для управления инфраструктурой как кодом.",
-      "Мониторинг, логирование и разбор инцидентов вместе с командами разработки.",
-    ],
-  },
-  3748: {
-    id: "ID 3748",
-    title: "QA engineer",
-    summary: "Senior QA для регресса, API-проверок и контроля качества релизного цикла.",
-    grade: "Senior",
-    area: "QA · регресс и API",
-    status: "Свободен",
-    requirements: [
-      "Опыт функционального и регрессионного тестирования от 4 лет.",
-      "Уверенное тестирование REST API через Postman, Swagger или аналогичные инструменты.",
-      "SQL для проверки данных и анализа дефектов.",
-      "Ведение тестовой документации: чек-листы, тест-кейсы, отчеты по регрессу.",
-      "Опыт автотестов будет преимуществом, но не обязателен для старта.",
-    ],
-  },
-  3752: {
-    id: "ID 3752",
-    title: "React.js developer",
-    summary: "Senior frontend-разработчик для продуктовой команды на React и TypeScript.",
-    grade: "Senior",
-    area: "Frontend · TypeScript",
-    status: "На проекте",
-    requirements: [
-      "React, TypeScript и опыт коммерческой frontend-разработки от 4 лет.",
-      "Работа с состоянием приложения, формами, валидацией и REST API.",
-      "Понимание производительности интерфейсов и доступности базовых сценариев.",
-      "Опыт с дизайн-системами, компонентным подходом и code review.",
-      "Тестирование компонентов и аккуратная работа с пользовательскими состояниями.",
-    ],
+  ekaterina: {
+    name: "Екатерина Волкова",
+    telegram: "https://t.me/sherlie221",
   },
 };
 
-const roleOptions = [
-  "1С-аналитик",
-  "1С-разработчик",
-  "1С-Руководитель проекта",
-  "1С-тестировщик",
-  "Android-разработчик",
-  "Back-end Developer",
-  "ВІ-разработчик",
-  "Data/BI analyst",
-  "Data Engineer",
-  "Data Scientist",
-  "DBA",
-  "DevOps",
-  "DWH analyst",
-  "Flutter разработчик",
-  "Frontend",
-  "Fullstack разработчик",
-  "Full-stak тестировщик (C#)",
-  "Full-stak тестировщик (Java)",
-  "Full-stak тестировщик (Python)",
-  "Golang-разработчик",
-  "Growth-manager",
-  "iOS-разработчик",
-  "Jira developer",
-  "Low-code разработчик ELMA",
-  "ML Engineer",
-  "MLOps Engineer",
-  ".NET",
-  "РНР-разработчик",
-  "РНР-разработчик (Fullstack)",
-  "RPA разработчик",
-  "SQL-разработчик",
-  "Team Lead",
-  "Tech Lead",
-  "Автотестер",
-  "Автотестировщик (Java)",
-  "Автотестировщик (JavaScript)",
-  "Автотестировщик (Python)",
-  "Аналитик",
-  "Аналитик ELMA",
-  "Аналитик OEBS",
-  "Аналитик Siebel",
-  "Аналитик ИБ",
-  "Архитектор",
-  "Бизнес-аналитик",
-  "Дизайнер",
-  "Инженер тех. поддержки",
-  "Иное",
-  "ИТ лидер",
-  "Консультант SAP BW",
-  "Консультант SAP MM/LO/LE",
-  "Консультант SAP TM",
-  "Нагрузочное тестирование",
-  "Продуктовый аналитик",
-  "Разработчик АВАР",
-  "Разработчик ВPMSoft",
-  "Разработчик С#",
-  "Разработчик С++",
-  "Разработчик ELMA",
-  "Разработчик Front (Angular)",
-  "Разработчик ELMA",
-  "Разработчик Front (Angular)",
-  "Разработчик Front (React)",
-  "Разработчик Front (Vue)",
-  "Разработчик Java",
-  "Разработчик OEBS",
-  "Разработчик Python",
-  "Разработчик Siebel",
-  "Разработчик SQL",
-  "Разработчик Unity AR",
-  "Разработчик ЦФТ",
-  "Риск менеджер",
-  "Руководитель проекта",
-  "Ручной тестировщик",
-  "Системный аналитик",
-  "Системный Аналитик DWH",
-  "Специалист UI/UX",
-  "Специалист по разметке данных",
-  "Специалист сопровождения ПО",
-  "Технический писатель",
-];
+const specialists = [
+  {
+    id: "qa-konstantin-a",
+    name: "Константин А.",
+    category: "QA",
+    grade: "Middle-",
+    specialization: "QA: Manual",
+    location: "РФ",
+    rate: "уточняется",
+    experience: "2+ лет",
+    status: "Свободен",
+    availableFrom: "готов к старту",
+    cv: "https://disk.360.yandex.ru/d/4ijC4-G6xFEGgg",
+    manager: managers.anastasia,
+  },
+  {
+    id: "qa-yaroslav-sh",
+    name: "Ярослав Ш.",
+    category: "QA",
+    grade: "Lead",
+    specialization: "QA: Manual",
+    location: "РФ",
+    rate: "2600 ₽/ч",
+    experience: "4+ лет",
+    status: "На проекте",
+    availableFrom: "по согласованию",
+    cv: "https://disk.360.yandex.ru/i/XulrP8z0KPzH3A",
+    manager: managers.anastasia,
+  },
+  {
+    id: "qa-evgeniy-s",
+    name: "Евгений С.",
+    category: "QA",
+    grade: "Lead",
+    specialization: "QA: Manual",
+    location: "РФ",
+    rate: "3100 ₽/ч",
+    experience: "9+ лет",
+    status: "На проекте",
+    availableFrom: "по согласованию",
+    cv: "https://disk.360.yandex.ru/i/1xiMXNwvI9oZsw",
+    manager: managers.anastasia,
+  },
+  {
+    id: "qa-anastasia-p",
+    name: "Анастасия П.",
+    category: "QA",
+    grade: "Middle",
+    specialization: "QA: Manual",
+    location: "РФ",
+    rate: "1350 ₽/ч",
+    experience: "4+ лет",
+    status: "Свободен",
+    availableFrom: "asap",
+    cv: "https://disk.360.yandex.ru/i/QkGBqT0JbOJCgA",
+    manager: managers.anastasia,
+  },
+  {
+    id: "qa-alina-yu",
+    name: "Алина Ю.",
+    category: "QA",
+    grade: "Middle",
+    specialization: "QA: Manual",
+    location: "РФ",
+    rate: "уточняется",
+    experience: "3+ лет",
+    status: "Свободен",
+    availableFrom: "2 недели",
+    cv: "https://disk.360.yandex.ru/d/SvKJpb6Pjcfdrg",
+    manager: managers.anastasia,
+  },
+  {
+    id: "qa-mikhail-r",
+    name: "Михаил Р.",
+    category: "QA",
+    grade: "Middle+",
+    specialization: "QA: Manual",
+    location: "РФ",
+    rate: "2100 ₽/ч",
+    experience: "6+ лет",
+    status: "Свободен",
+    availableFrom: "asap",
+    cv: "https://disk.360.yandex.ru/d/EQpi7VsQwGSoIw",
+    manager: managers.anastasia,
+  },
+  {
+    id: "backend-pavel-k",
+    name: "Павел К.",
+    category: "Backend",
+    grade: "Senior",
+    specialization: "Backend: Java",
+    location: "РФ",
+    rate: "3100 ₽/ч",
+    experience: "9+ лет",
+    status: "Свободен",
+    availableFrom: "готов к старту",
+    cv: "https://disk.360.yandex.ru/d/X_aUde5JS6VycA",
+    manager: managers.ekaterina,
+  },
+  {
+    id: "backend-yuriy-t",
+    name: "Юрий Т.",
+    category: "Backend",
+    grade: "Middle+",
+    specialization: "Backend: Java",
+    location: "РФ",
+    rate: "2750 ₽/ч",
+    experience: "12+ лет",
+    status: "Свободен",
+    availableFrom: "asap",
+    cv: "https://disk.360.yandex.ru/i/Sh6MYUPcJSoO1Q",
+    manager: managers.ekaterina,
+  },
+  {
+    id: "backend-vyacheslav-s",
+    name: "Вячеслав С.",
+    category: "Backend",
+    grade: "Senior",
+    specialization: "Backend: Go",
+    location: "РФ",
+    rate: "уточняется",
+    experience: "4+ лет",
+    status: "Свободен",
+    availableFrom: "готов к старту",
+    cv: "https://disk.360.yandex.ru/i/RwGnkEsFfH6d2g",
+    manager: managers.ekaterina,
+  },
+  {
+    id: "frontend-roman-m",
+    name: "Роман М.",
+    category: "Frontend",
+    grade: "Senior",
+    specialization: "Frontend: React",
+    location: "РФ",
+    rate: "2100 ₽/ч",
+    experience: "7+ лет",
+    status: "Свободен",
+    availableFrom: "готов к старту",
+    cv: "https://disk.360.yandex.ru/i/jIqdPKDTr4J0kw",
+    manager: managers.anastasia,
+  },
+  {
+    id: "frontend-nikita-r",
+    name: "Никита Р.",
+    category: "Frontend",
+    grade: "Middle",
+    specialization: "Frontend: React",
+    location: "РФ",
+    rate: "1700 ₽/ч",
+    experience: "3+ лет",
+    status: "Свободен",
+    availableFrom: "asap",
+    cv: "https://disk.360.yandex.ru/i/u5ToO7iV8KB_yg",
+    manager: managers.anastasia,
+  },
+  {
+    id: "frontend-stanislav-p",
+    name: "Станистав П.",
+    category: "Frontend",
+    grade: "Middle",
+    specialization: "Frontend: React",
+    location: "РФ",
+    rate: "1700 ₽/ч",
+    experience: "3+ лет",
+    status: "Свободен",
+    availableFrom: "asap",
+    cv: "https://disk.360.yandex.ru/d/o7mvEeMPk8kWVw",
+    manager: managers.anastasia,
+  },
+  {
+    id: "design-daria-i",
+    name: "Дарья И.",
+    category: "Дизайн",
+    grade: "Middle+",
+    specialization: "Дизайн: UX / UI",
+    location: "РФ",
+    rate: "уточняется",
+    experience: "3+ лет",
+    status: "Свободен",
+    availableFrom: "по согласованию",
+    cv: "https://disk.360.yandex.ru/i/FwlKfVtYPMalNw",
+    manager: managers.anastasia,
+  },
+  {
+    id: "analytics-alina-b",
+    name: "Алина Б.",
+    category: "Аналитика",
+    grade: "Middle",
+    specialization: "Аналитика: системный аналитик",
+    location: "РФ",
+    rate: "уточняется",
+    experience: "3+ лет",
+    status: "На проекте",
+    availableFrom: "по согласованию",
+    cv: "https://disk.360.yandex.ru/i/xUm-DseGopH1gw",
+    manager: managers.anastasia,
+  },
+  {
+    id: "devops-maksim-b",
+    name: "Максим Б.",
+    category: "DevOps",
+    grade: "Middle",
+    specialization: "DevOps: системный администратор",
+    location: "РФ",
+    rate: "уточняется",
+    experience: "4+ лет",
+    status: "Свободен",
+    availableFrom: "asap",
+    cv: "https://disk.360.yandex.ru/d/eubEDNUm_hAAGA",
+    manager: managers.ekaterina,
+  },
+  {
+    id: "pm-nikita-l",
+    name: "Никита Л.",
+    category: "PM",
+    grade: "Senior",
+    specialization: "PM: руководитель проекта",
+    location: "РФ",
+    rate: "уточняется",
+    experience: "8+ лет",
+    status: "Свободен",
+    availableFrom: "готов к старту",
+    cv: "https://disk.360.yandex.ru/i/eshYVQilwXZoGA",
+    manager: managers.ekaterina,
+  },
+].map((specialist) => ({
+  ...specialist,
+  letter:
+    specialist.letter ??
+    `${specialist.name} — ${specialist.grade} специалист направления ${specialist.specialization}. ` +
+      `Опыт: ${specialist.experience}. Локация: ${specialist.location}. ` +
+      `Текущий статус: ${specialist.status}; предварительный выход: ${specialist.availableFrom}. ` +
+      `Для уточнения деталей, ставки и доступности свяжитесь с ответственным менеджером: ${specialist.manager.name}.`,
+}));
 
-const tabs = document.querySelectorAll(".tab");
-const roleCards = document.querySelectorAll(".role-card");
-const form = document.querySelector(".request-form");
-const formNote = document.querySelector(".form-note");
-const submitButton = form?.querySelector('button[type="submit"]');
-const requestTypeRadios = form?.querySelectorAll('input[name="type"]') ?? [];
-const requestTypeOptions = form?.querySelectorAll(".type-option") ?? [];
-const requestTypeTriggers = document.querySelectorAll("[data-request-type]");
-const roleModal = document.querySelector("#role-modal");
-const modalDialog = roleModal?.querySelector(".modal-dialog");
-const modalCloseControls = roleModal?.querySelectorAll("[data-modal-close]") ?? [];
-const modalFields = {
-  id: document.querySelector("#modal-role-id"),
-  title: document.querySelector("#modal-role-title"),
-  summary: document.querySelector("#modal-role-summary"),
-  grade: document.querySelector("#modal-role-grade"),
-  area: document.querySelector("#modal-role-area"),
-  status: document.querySelector("#modal-role-status"),
-  requirements: document.querySelector("#modal-role-requirements"),
+const state = {
+  category: "all",
+  status: "all",
+  search: "",
 };
+
+const benchBody = document.querySelector("#bench-body");
+const benchCounter = document.querySelector("#bench-counter");
+const emptyState = document.querySelector("#empty-state");
+const searchInput = document.querySelector("#bench-search");
+const filterButtons = document.querySelectorAll(".filter-chip");
+const totalStat = document.querySelector("#stat-total");
+const freeStat = document.querySelector("#stat-free");
+const letterModal = document.querySelector("#letter-modal");
+const modalDialog = letterModal?.querySelector(".modal-dialog");
+const modalCloseControls = letterModal?.querySelectorAll("[data-modal-close]") ?? [];
+const modalTitle = document.querySelector("#letter-modal-title");
+const modalText = document.querySelector("#letter-modal-text");
 const revealTargets = document.querySelectorAll(
-  ".hero-copy > *, .visual-cubes, .visual-cube, .section-heading, .role-tabs, .role-card, .request-copy > *, .request-highlights article, .request-form, .site-footer > *",
+  ".hero-copy > *, .visual-cubes, .visual-cube, .hero-star, .section-heading, .bench-toolbar, .bench-summary, .bench-table-wrap, .site-footer > *",
 );
 
 let lastFocusedElement = null;
 
-function populateRoleOptions() {
-  const roleSelect = form?.querySelector('select[name="role"]');
-
-  if (!roleSelect || roleOptions.length === 0) {
-    return;
+function statusClass(status) {
+  if (status === "Свободен") {
+    return "status-free";
   }
 
-  roleOptions.forEach((role) => {
-    const option = document.createElement("option");
-    option.value = role;
-    option.textContent = role;
-    roleSelect.append(option);
+  if (status === "На проекте") {
+    return "status-busy";
+  }
+
+  if (status === "Интервью") {
+    return "status-interview";
+  }
+
+  return "";
+}
+
+function matchesSearch(specialist) {
+  const query = state.search.trim().toLowerCase();
+
+  if (!query) {
+    return true;
+  }
+
+  return [
+    specialist.name,
+    specialist.category,
+    specialist.grade,
+    specialist.specialization,
+    specialist.location,
+    specialist.rate,
+    specialist.experience,
+    specialist.status,
+  ]
+    .join(" ")
+    .toLowerCase()
+    .includes(query);
+}
+
+function getFilteredSpecialists() {
+  return specialists.filter((specialist) => {
+    const categoryMatches = state.category === "all" || specialist.category === state.category;
+    const statusMatches = state.status === "all" || specialist.status === state.status;
+
+    return categoryMatches && statusMatches && matchesSearch(specialist);
   });
 }
 
-function syncRequestTypeStyles() {
-  requestTypeOptions.forEach((option) => {
-    const input = option.querySelector('input[name="type"]');
-    option.classList.toggle("is-selected", Boolean(input?.checked));
-  });
+function createCell(label, content) {
+  const cell = document.createElement("td");
+  cell.dataset.label = label;
+
+  if (content instanceof Node) {
+    cell.append(content);
+  } else {
+    cell.textContent = content;
+  }
+
+  return cell;
 }
 
-function setRequestType(type, shouldFocusForm = false) {
-  const targetRadio = [...requestTypeRadios].find((radio) => radio.value === type);
+function createActionLink(label, href, className, ariaLabel) {
+  const link = document.createElement("a");
+  link.className = `table-action ${className}`.trim();
+  link.href = href;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  link.textContent = label;
 
-  if (!targetRadio) {
+  if (ariaLabel) {
+    link.setAttribute("aria-label", ariaLabel);
+  }
+
+  return link;
+}
+
+function createSpecialistRow(specialist) {
+  const row = document.createElement("tr");
+  row.dataset.category = specialist.category;
+  row.dataset.status = specialist.status;
+
+  const nameWrap = document.createElement("span");
+  nameWrap.className = "specialist-name";
+
+  const name = document.createElement("strong");
+  name.textContent = specialist.name;
+
+  const availability = document.createElement("span");
+  availability.textContent = `Выход: ${specialist.availableFrom}`;
+
+  nameWrap.append(name, availability);
+
+  const grade = document.createElement("span");
+  grade.className = "grade-pill";
+  grade.textContent = specialist.grade;
+
+  const status = document.createElement("span");
+  status.className = `status-pill ${statusClass(specialist.status)}`.trim();
+  status.textContent = specialist.status;
+
+  const letterButton = document.createElement("button");
+  letterButton.className = "table-action primary";
+  letterButton.type = "button";
+  letterButton.textContent = "Открыть";
+  letterButton.setAttribute("aria-label", `Открыть сопроводительное письмо специалиста ${specialist.name}`);
+  letterButton.addEventListener("click", () => openLetterModal(specialist));
+
+  row.append(
+    createCell("Специалист", nameWrap),
+    createCell("Грейд", grade),
+    createCell("Специализация", specialist.specialization),
+    createCell("Локация", specialist.location),
+    createCell("Ставка", specialist.rate),
+    createCell("Опыт", specialist.experience),
+    createCell("Статус", status),
+    createCell("CV", createActionLink("CV", specialist.cv, "", `Открыть CV специалиста ${specialist.name}`)),
+    createCell("Письмо", letterButton),
+    createCell(
+      "Контакт",
+      createActionLink("Telegram", specialist.manager.telegram, "telegram", `Связаться с менеджером: ${specialist.manager.name}`),
+    ),
+  );
+
+  return row;
+}
+
+function renderBench() {
+  const filtered = getFilteredSpecialists();
+
+  benchBody.replaceChildren(...filtered.map(createSpecialistRow));
+  emptyState.hidden = filtered.length > 0;
+
+  benchCounter.textContent =
+    filtered.length === specialists.length
+      ? `Показаны все специалисты: ${specialists.length}`
+      : `Показано: ${filtered.length} из ${specialists.length}`;
+}
+
+function setActiveFilter(button) {
+  const { filterType, filterValue } = button.dataset;
+
+  state[filterType] = filterValue;
+
+  document
+    .querySelectorAll(`[data-filter-type="${filterType}"]`)
+    .forEach((item) => item.classList.toggle("active", item === button));
+
+  renderBench();
+}
+
+function openLetterModal(specialist) {
+  if (!letterModal || !modalDialog || !modalTitle || !modalText) {
     return;
   }
 
-  targetRadio.checked = true;
-  syncRequestTypeStyles();
+  lastFocusedElement = document.activeElement;
+  modalTitle.textContent = `Сопроводительное письмо специалиста ${specialist.name}`;
+  modalText.textContent = specialist.letter;
 
-  if (submitButton) {
-    submitButton.textContent =
-      type === "specialist" ? "Отправить специалиста" : "Отправить запрос";
-  }
-
-  if (formNote) {
-    formNote.textContent =
-      type === "specialist"
-        ? "Заполните специализацию, грейд, формат доступности и контакт."
-        : "Заполните роль, грейд, формат работы и контакт ответственного.";
-    formNote.classList.remove("success");
-  }
-
-  if (shouldFocusForm) {
-    form?.querySelector("select, input, textarea")?.focus({ preventScroll: true });
-  }
+  letterModal.classList.add("is-open");
+  letterModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+  modalDialog.focus();
 }
 
-function closeRoleModal(restoreFocus = true) {
-  if (!roleModal) {
+function closeLetterModal(restoreFocus = true) {
+  if (!letterModal) {
     return;
   }
 
-  roleModal.classList.remove("is-open");
-  roleModal.setAttribute("aria-hidden", "true");
+  letterModal.classList.remove("is-open");
+  letterModal.setAttribute("aria-hidden", "true");
   document.body.classList.remove("modal-open");
 
   if (restoreFocus && lastFocusedElement instanceof HTMLElement) {
@@ -263,102 +446,37 @@ function closeRoleModal(restoreFocus = true) {
   }
 }
 
-function openRoleModal(card) {
-  const data = roleData[card.dataset.roleKey];
-
-  if (!roleModal || !modalDialog || !data) {
-    return;
-  }
-
-  lastFocusedElement = document.activeElement;
-
-  modalFields.id.textContent = data.id;
-  modalFields.title.textContent = data.title;
-  modalFields.summary.textContent = data.summary;
-  modalFields.grade.textContent = `Грейд: ${data.grade}`;
-  modalFields.area.textContent = data.area;
-  modalFields.status.textContent = `Статус: ${data.status}`;
-  modalFields.requirements.replaceChildren(
-    ...data.requirements.map((requirement) => {
-      const item = document.createElement("li");
-      item.textContent = requirement;
-      return item;
-    }),
-  );
-
-  roleModal.classList.add("is-open");
-  roleModal.setAttribute("aria-hidden", "false");
-  document.body.classList.add("modal-open");
-  modalDialog.focus();
-}
-
-tabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    const filter = tab.dataset.filter;
-
-    tabs.forEach((item) => item.classList.remove("active"));
-    tab.classList.add("active");
-
-    roleCards.forEach((card) => {
-      const isVisible = filter === "all" || card.dataset.category === filter;
-      card.classList.toggle("is-hidden", !isVisible);
-    });
-  });
+filterButtons.forEach((button) => {
+  button.addEventListener("click", () => setActiveFilter(button));
 });
 
-roleCards.forEach((card) => {
-  card.addEventListener("click", () => openRoleModal(card));
-  card.addEventListener("keydown", (event) => {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      openRoleModal(card);
-    }
-  });
+searchInput?.addEventListener("input", (event) => {
+  state.search = event.target.value;
+  renderBench();
 });
 
 modalCloseControls.forEach((control) => {
-  control.addEventListener("click", closeRoleModal);
+  control.addEventListener("click", () => closeLetterModal());
 });
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && roleModal?.classList.contains("is-open")) {
-    closeRoleModal();
+  if (event.key === "Escape" && letterModal?.classList.contains("is-open")) {
+    closeLetterModal();
   }
 });
 
-requestTypeRadios.forEach((radio) => {
-  radio.addEventListener("change", () => setRequestType(radio.value));
-});
+if (totalStat) {
+  totalStat.textContent = specialists.length;
+}
 
-requestTypeTriggers.forEach((trigger) => {
-  trigger.addEventListener("click", () => {
-    setRequestType(trigger.dataset.requestType);
+if (freeStat) {
+  freeStat.textContent = specialists.filter((specialist) => specialist.status === "Свободен").length;
+}
 
-    if (roleModal?.classList.contains("is-open")) {
-      closeRoleModal(false);
-    }
-  });
-});
-
-form?.addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  const formData = new FormData(form);
-  const type = formData.get("type");
-  const role = formData.get("role");
-
-  formNote.textContent =
-    type === "specialist"
-      ? `Специалист по направлению «${role}» зафиксирован. В рабочем контуре он уйдет ответственному за подбор.`
-      : `Запрос на роль «${role}» зафиксирован. В рабочем контуре он появится в витрине со статусом «Свободен».`;
-  formNote.classList.add("success");
-});
-
-syncRequestTypeStyles();
-populateRoleOptions();
+renderBench();
 
 revealTargets.forEach((element, index) => {
-  element.classList.add("reveal", `reveal-delay-${(index % 4) || 1}`);
+  element.classList.add("reveal", `reveal-delay-${(index % 3) + 1}`);
 });
 
 if ("IntersectionObserver" in window) {
@@ -371,7 +489,7 @@ if ("IntersectionObserver" in window) {
         }
       });
     },
-    { threshold: 0.16, rootMargin: "0px 0px -40px" },
+    { threshold: 0.14, rootMargin: "0px 0px -36px" },
   );
 
   revealTargets.forEach((element) => revealObserver.observe(element));
