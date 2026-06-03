@@ -245,14 +245,13 @@ const specialists = [
 }));
 
 const benchBody = document.querySelector("#bench-body");
-const benchCounter = document.querySelector("#bench-counter");
 const letterModal = document.querySelector("#letter-modal");
 const modalDialog = letterModal?.querySelector(".modal-dialog");
 const modalCloseControls = letterModal?.querySelectorAll("[data-modal-close]") ?? [];
 const modalTitle = document.querySelector("#letter-modal-title");
 const modalText = document.querySelector("#letter-modal-text");
 const revealTargets = document.querySelectorAll(
-  ".section-heading, .bench-summary, .bench-table-wrap, .site-footer > *",
+  ".section-heading, .bench-table-wrap, .site-footer > *",
 );
 
 let lastFocusedElement = null;
@@ -344,8 +343,6 @@ function createSpecialistRow(specialist) {
 
 function renderBench() {
   benchBody.replaceChildren(...specialists.map(createSpecialistRow));
-
-  benchCounter.textContent = `Показаны все специалисты: ${specialists.length}`;
 }
 
 function openLetterModal(specialist) {
