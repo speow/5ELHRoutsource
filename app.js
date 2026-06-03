@@ -244,76 +244,18 @@ const specialists = [
       `Для уточнения деталей, ставки и доступности свяжитесь с ответственным менеджером: ${specialist.manager.name}.`,
 }));
 
-const state = {
-  category: "all",
-  status: "all",
-  search: "",
-};
-
 const benchBody = document.querySelector("#bench-body");
 const benchCounter = document.querySelector("#bench-counter");
-const emptyState = document.querySelector("#empty-state");
-const searchInput = document.querySelector("#bench-search");
-const filterButtons = document.querySelectorAll(".filter-chip");
-const totalStat = document.querySelector("#stat-total");
-const freeStat = document.querySelector("#stat-free");
 const letterModal = document.querySelector("#letter-modal");
 const modalDialog = letterModal?.querySelector(".modal-dialog");
 const modalCloseControls = letterModal?.querySelectorAll("[data-modal-close]") ?? [];
 const modalTitle = document.querySelector("#letter-modal-title");
 const modalText = document.querySelector("#letter-modal-text");
 const revealTargets = document.querySelectorAll(
-  ".hero-copy > *, .visual-cubes, .visual-cube, .hero-star, .section-heading, .bench-toolbar, .bench-summary, .bench-table-wrap, .site-footer > *",
+  ".section-heading, .bench-summary, .bench-table-wrap, .site-footer > *",
 );
 
 let lastFocusedElement = null;
-
-function statusClass(status) {
-  if (status === "Свободен") {
-    return "status-free";
-  }
-
-  if (status === "На проекте") {
-    return "status-busy";
-  }
-
-  if (status === "Интервью") {
-    return "status-interview";
-  }
-
-  return "";
-}
-
-function matchesSearch(specialist) {
-  const query = state.search.trim().toLowerCase();
-
-  if (!query) {
-    return true;
-  }
-
-  return [
-    specialist.name,
-    specialist.category,
-    specialist.grade,
-    specialist.specialization,
-    specialist.location,
-    specialist.rate,
-    specialist.experience,
-    specialist.status,
-  ]
-    .join(" ")
-    .toLowerCase()
-    .includes(query);
-}
-
-function getFilteredSpecialists() {
-  return specialists.filter((specialist) => {
-    const categoryMatches = state.category === "all" || specialist.category === state.category;
-    const statusMatches = state.status === "all" || specialist.status === state.status;
-
-    return categoryMatches && statusMatches && matchesSearch(specialist);
-  });
-}
 
 function createCell(label, content) {
   const cell = document.createElement("td");
@@ -343,10 +285,25 @@ function createActionLink(label, href, className, ariaLabel) {
   return link;
 }
 
+function splitSpecialization(value) {
+  const separatorIndex = value.indexOf(":");
+
+  if (separatorIndex === -1) {
+    return {
+      specialization: value,
+      role: "",
+    };
+  }
+
+  return {
+    specialization: value.slice(separatorIndex + 1).trim(),
+    role: value.slice(0, separatorIndex).trim(),
+  };
+}
+
 function createSpecialistRow(specialist) {
   const row = document.createElement("tr");
-  row.dataset.category = specialist.category;
-  row.dataset.status = specialist.status;
+  const specializationParts = splitSpecialization(specialist.specialization);
 
   const nameWrap = document.createElement("span");
   nameWrap.className = "specialist-name";
@@ -354,18 +311,11 @@ function createSpecialistRow(specialist) {
   const name = document.createElement("strong");
   name.textContent = specialist.name;
 
-  const availability = document.createElement("span");
-  availability.textContent = `Выход: ${specialist.availableFrom}`;
-
-  nameWrap.append(name, availability);
+  nameWrap.append(name);
 
   const grade = document.createElement("span");
   grade.className = "grade-pill";
   grade.textContent = specialist.grade;
-
-  const status = document.createElement("span");
-  status.className = `status-pill ${statusClass(specialist.status)}`.trim();
-  status.textContent = specialist.status;
 
   const letterButton = document.createElement("button");
   letterButton.className = "table-action primary";
@@ -377,11 +327,10 @@ function createSpecialistRow(specialist) {
   row.append(
     createCell("Специалист", nameWrap),
     createCell("Грейд", grade),
-    createCell("Специализация", specialist.specialization),
-    createCell("Локация", specialist.location),
+    createCell("Специализация", specializationParts.specialization),
+    createCell("Роль", specializationParts.role),
     createCell("Ставка", specialist.rate),
     createCell("Опыт", specialist.experience),
-    createCell("Статус", status),
     createCell("CV", createActionLink("CV", specialist.cv, "", `Открыть CV специалиста ${specialist.name}`)),
     createCell("Письмо", letterButton),
     createCell(
@@ -394,27 +343,9 @@ function createSpecialistRow(specialist) {
 }
 
 function renderBench() {
-  const filtered = getFilteredSpecialists();
+  benchBody.replaceChildren(...specialists.map(createSpecialistRow));
 
-  benchBody.replaceChildren(...filtered.map(createSpecialistRow));
-  emptyState.hidden = filtered.length > 0;
-
-  benchCounter.textContent =
-    filtered.length === specialists.length
-      ? `Показаны все специалисты: ${specialists.length}`
-      : `Показано: ${filtered.length} из ${specialists.length}`;
-}
-
-function setActiveFilter(button) {
-  const { filterType, filterValue } = button.dataset;
-
-  state[filterType] = filterValue;
-
-  document
-    .querySelectorAll(`[data-filter-type="${filterType}"]`)
-    .forEach((item) => item.classList.toggle("active", item === button));
-
-  renderBench();
+  benchCounter.textContent = `Показаны все специалисты: ${specialists.length}`;
 }
 
 function openLetterModal(specialist) {
@@ -446,15 +377,6 @@ function closeLetterModal(restoreFocus = true) {
   }
 }
 
-filterButtons.forEach((button) => {
-  button.addEventListener("click", () => setActiveFilter(button));
-});
-
-searchInput?.addEventListener("input", (event) => {
-  state.search = event.target.value;
-  renderBench();
-});
-
 modalCloseControls.forEach((control) => {
   control.addEventListener("click", () => closeLetterModal());
 });
@@ -464,14 +386,6 @@ document.addEventListener("keydown", (event) => {
     closeLetterModal();
   }
 });
-
-if (totalStat) {
-  totalStat.textContent = specialists.length;
-}
-
-if (freeStat) {
-  freeStat.textContent = specialists.filter((specialist) => specialist.status === "Свободен").length;
-}
 
 renderBench();
 

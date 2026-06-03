@@ -16,7 +16,6 @@
         <img src="assets/logo-5element.svg" alt="Пятый элемент" />
       </a>
       <nav class="header-nav" aria-label="Навигация">
-        <a href="#bench">Специалисты</a>
         <a href="#contacts">Контакты</a>
       </nav>
       <a
@@ -30,71 +29,11 @@
     </header>
 
     <main id="top">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <p class="eyebrow">Bench Пятого элемента</p>
-          <h1 id="hero-title">Витрина IT-специалистов для партнеров</h1>
-          <p class="hero-lead">
-            Актуальные кандидаты из Бенча с грейдом, ставкой, статусом, CV и прямым контактом менеджера в Telegram.
-          </p>
-
-          <dl class="hero-stats" aria-label="Сводка по витрине">
-            <div>
-              <dt id="stat-total">0</dt>
-              <dd>специалистов в витрине</dd>
-            </div>
-            <div>
-              <dt id="stat-free">0</dt>
-              <dd>свободны сейчас</dd>
-            </div>
-            <div>
-              <dt>2</dt>
-              <dd>аккаунт-менеджера на связи</dd>
-            </div>
-          </dl>
-        </div>
-
-        <div class="hero-visual" aria-hidden="true">
-          <img class="visual-cubes" src="assets/cubesBig-DT-yyV7Y.png" alt="" />
-          <img class="visual-cube" src="assets/PurpleCube-B-9e4vRW.png" alt="" />
-          <img class="hero-star hero-star-top" src="https://5-element.tech/assets/Star-B4tby_Ye.png" alt="" />
-          <img class="hero-star hero-star-bottom" src="https://5-element.tech/assets/Star-B4tby_Ye.png" alt="" />
-        </div>
-      </section>
-
       <section class="bench-section" id="bench" aria-labelledby="bench-title">
         <div class="section-heading">
           <div>
             <p class="eyebrow">Актуальный Бенч</p>
             <h2 id="bench-title">Специалисты</h2>
-          </div>
-          <p>
-            Все строки собраны из актуального Бенча: доступность, ставка, CV и контакт менеджера видны сразу в одной витрине.
-          </p>
-        </div>
-
-        <div class="bench-toolbar" aria-label="Фильтры витрины">
-          <label class="search-field">
-            <span>Поиск</span>
-            <input id="bench-search" type="search" placeholder="Имя, специализация, стек" autocomplete="off" />
-          </label>
-
-          <div class="filter-group" aria-label="Фильтр по направлению">
-            <button class="filter-chip active" type="button" data-filter-type="category" data-filter-value="all">Все</button>
-            <button class="filter-chip" type="button" data-filter-type="category" data-filter-value="QA">QA</button>
-            <button class="filter-chip" type="button" data-filter-type="category" data-filter-value="Backend">Backend</button>
-            <button class="filter-chip" type="button" data-filter-type="category" data-filter-value="Frontend">Frontend</button>
-            <button class="filter-chip" type="button" data-filter-type="category" data-filter-value="Дизайн">Дизайн</button>
-            <button class="filter-chip" type="button" data-filter-type="category" data-filter-value="Аналитика">Аналитика</button>
-            <button class="filter-chip" type="button" data-filter-type="category" data-filter-value="DevOps">DevOps</button>
-            <button class="filter-chip" type="button" data-filter-type="category" data-filter-value="PM">PM</button>
-          </div>
-
-          <div class="filter-group" aria-label="Фильтр по статусу">
-            <button class="filter-chip subtle active" type="button" data-filter-type="status" data-filter-value="all">Все статусы</button>
-            <button class="filter-chip subtle" type="button" data-filter-type="status" data-filter-value="Свободен">Свободен</button>
-            <button class="filter-chip subtle" type="button" data-filter-type="status" data-filter-value="На проекте">На проекте</button>
-            <button class="filter-chip subtle" type="button" data-filter-type="status" data-filter-value="Интервью">Интервью</button>
           </div>
         </div>
 
@@ -110,10 +49,9 @@
                 <th scope="col">Специалист</th>
                 <th scope="col">Грейд</th>
                 <th scope="col">Специализация</th>
-                <th scope="col">Локация</th>
+                <th scope="col">Роль</th>
                 <th scope="col">Ставка</th>
                 <th scope="col">Опыт</th>
-                <th scope="col">Статус</th>
                 <th scope="col">CV</th>
                 <th scope="col">Письмо</th>
                 <th scope="col">Контакт</th>
@@ -121,7 +59,6 @@
             </thead>
             <tbody id="bench-body"></tbody>
           </table>
-          <p class="empty-state" id="empty-state" hidden>По выбранным фильтрам специалистов не найдено.</p>
         </div>
       </section>
     </main>
@@ -146,7 +83,6 @@
     <footer class="site-footer" id="contacts">
       <div class="footer-brand">
         <img src="assets/logo-5element.svg" alt="Пятый элемент" />
-        <span class="footer-caption">Витрина IT-специалистов для партнеров</span>
       </div>
       <section class="footer-contact-group" aria-labelledby="footer-contact-title">
         <span class="footer-caption footer-contact-title" id="footer-contact-title">
