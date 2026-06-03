@@ -237,8 +237,9 @@ const specialists = [
 ].map((specialist) => ({
   ...specialist,
   letter:
-    specialist.letter ??
-    `${specialist.name} — ${specialist.grade} специалист направления ${specialist.specialization}. ` +
+    specialist.letter != null
+      ? specialist.letter
+      : `${specialist.name} — ${specialist.grade} специалист направления ${specialist.specialization}. ` +
       `Опыт: ${specialist.experience}. Локация: ${specialist.location}. ` +
       `Текущий статус: ${specialist.status}; предварительный выход: ${specialist.availableFrom}. ` +
       `Для уточнения деталей, ставки и доступности свяжитесь с ответственным менеджером: ${specialist.manager.name}.`,
@@ -246,8 +247,8 @@ const specialists = [
 
 const benchBody = document.querySelector("#bench-body");
 const letterModal = document.querySelector("#letter-modal");
-const modalDialog = letterModal?.querySelector(".modal-dialog");
-const modalCloseControls = letterModal?.querySelectorAll("[data-modal-close]") ?? [];
+const modalDialog = letterModal ? letterModal.querySelector(".modal-dialog") : null;
+const modalCloseControls = letterModal ? letterModal.querySelectorAll("[data-modal-close]") : [];
 const modalTitle = document.querySelector("#letter-modal-title");
 const modalText = document.querySelector("#letter-modal-text");
 const revealTargets = document.querySelectorAll(
@@ -256,12 +257,16 @@ const revealTargets = document.querySelectorAll(
 
 let lastFocusedElement = null;
 
+function forEachNode(nodeList, callback) {
+  Array.prototype.forEach.call(nodeList, callback);
+}
+
 function createCell(label, content) {
   const cell = document.createElement("td");
   cell.dataset.label = label;
 
   if (content instanceof Node) {
-    cell.append(content);
+    cell.appendChild(content);
   } else {
     cell.textContent = content;
   }
@@ -310,7 +315,7 @@ function createSpecialistRow(specialist) {
   const name = document.createElement("strong");
   name.textContent = specialist.name;
 
-  nameWrap.append(name);
+  nameWrap.appendChild(name);
 
   const grade = document.createElement("span");
   grade.className = "grade-pill";
@@ -323,7 +328,7 @@ function createSpecialistRow(specialist) {
   letterButton.setAttribute("aria-label", `Открыть сопроводительное письмо специалиста ${specialist.name}`);
   letterButton.addEventListener("click", () => openLetterModal(specialist));
 
-  row.append(
+  [
     createCell("Специалист", nameWrap),
     createCell("Грейд", grade),
     createCell("Специализация", specializationParts.specialization),
@@ -336,13 +341,21 @@ function createSpecialistRow(specialist) {
       "Контакт",
       createActionLink("Telegram", specialist.manager.telegram, "telegram", `Связаться с менеджером: ${specialist.manager.name}`),
     ),
-  );
+  ].forEach((cell) => row.appendChild(cell));
 
   return row;
 }
 
 function renderBench() {
-  benchBody.replaceChildren(...specialists.map(createSpecialistRow));
+  if (!benchBody) {
+    return;
+  }
+
+  benchBody.textContent = "";
+
+  specialists.forEach((specialist) => {
+    benchBody.appendChild(createSpecialistRow(specialist));
+  });
 }
 
 function openLetterModal(specialist) {
@@ -374,19 +387,19 @@ function closeLetterModal(restoreFocus = true) {
   }
 }
 
-modalCloseControls.forEach((control) => {
+forEachNode(modalCloseControls, (control) => {
   control.addEventListener("click", () => closeLetterModal());
 });
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && letterModal?.classList.contains("is-open")) {
+  if (event.key === "Escape" && letterModal && letterModal.classList.contains("is-open")) {
     closeLetterModal();
   }
 });
 
 renderBench();
 
-revealTargets.forEach((element, index) => {
+forEachNode(revealTargets, (element, index) => {
   element.classList.add("reveal", `reveal-delay-${(index % 3) + 1}`);
 });
 
@@ -403,7 +416,7 @@ if ("IntersectionObserver" in window) {
     { threshold: 0.14, rootMargin: "0px 0px -36px" },
   );
 
-  revealTargets.forEach((element) => revealObserver.observe(element));
+  forEachNode(revealTargets, (element) => revealObserver.observe(element));
 } else {
-  revealTargets.forEach((element) => element.classList.add("is-visible"));
+  forEachNode(revealTargets, (element) => element.classList.add("is-visible"));
 }
