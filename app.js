@@ -305,6 +305,14 @@ function splitSpecialization(value) {
   };
 }
 
+function capitalizeFirstLetter(value) {
+  if (!value) {
+    return value;
+  }
+
+  return value.charAt(0).toUpperCase() + value.slice(1);
+}
+
 function createSpecialistRow(specialist) {
   const row = document.createElement("tr");
   const specializationParts = splitSpecialization(specialist.specialization);
@@ -331,7 +339,7 @@ function createSpecialistRow(specialist) {
   [
     createCell("Специалист", nameWrap),
     createCell("Грейд", grade),
-    createCell("Специализация", specializationParts.specialization),
+    createCell("Специализация", capitalizeFirstLetter(specializationParts.specialization)),
     createCell("Роль", specializationParts.role),
     createCell("Ставка", specialist.rate),
     createCell("Опыт", specialist.experience),
