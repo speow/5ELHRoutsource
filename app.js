@@ -11,20 +11,6 @@ const managers = {
 
 const specialists = [
   {
-    id: "qa-konstantin-a",
-    name: "Константин А.",
-    category: "QA",
-    grade: "Middle-",
-    specialization: "QA: Manual",
-    location: "РФ",
-    rate: "уточняется",
-    experience: "2+ лет",
-    status: "Свободен",
-    availableFrom: "готов к старту",
-    cv: "https://disk.360.yandex.ru/d/4ijC4-G6xFEGgg",
-    manager: managers.anastasia,
-  },
-  {
     id: "qa-yaroslav-sh",
     name: "Ярослав Ш.",
     category: "QA",
@@ -37,6 +23,7 @@ const specialists = [
     availableFrom: "по согласованию",
     cv: "https://disk.360.yandex.ru/i/XulrP8z0KPzH3A",
     manager: managers.anastasia,
+    letter: "Специалист по тестированию ПО с опытом более 5 лет в финтехе, промышленности и автоматизации. Уверенно работает с PostgreSQL, SQL-запросами, TestRail, Jira, Confluence, Postman, Swagger, GitLab, Kibana, Kafka, Kubernetes, JMeter, Fiddler и DevTools. Имеет опыт ручного тестирования backend, web- и мобильных приложений, тестирования документации, API, интеграций, логов, интерфейсов, а также проведения функционального, системного, регрессионного, нагрузочного и стресс-тестирования. На проектах ГК Иннотех и RCM-Навигатор 2.0 тестировал банковские сервисы по депозитам юридических лиц и систему управления надежностью промышленного оборудования, поддерживал тестовую документацию и взаимодействовал с аналитиками и разработчиками.",
   },
   {
     id: "qa-evgeniy-s",
@@ -51,34 +38,7 @@ const specialists = [
     availableFrom: "по согласованию",
     cv: "https://disk.360.yandex.ru/i/1xiMXNwvI9oZsw",
     manager: managers.anastasia,
-  },
-  {
-    id: "qa-anastasia-p",
-    name: "Анастасия П.",
-    category: "QA",
-    grade: "Middle",
-    specialization: "QA: Manual",
-    location: "РФ",
-    rate: "1350 ₽/ч",
-    experience: "4+ лет",
-    status: "Свободен",
-    availableFrom: "asap",
-    cv: "https://disk.360.yandex.ru/i/QkGBqT0JbOJCgA",
-    manager: managers.anastasia,
-  },
-  {
-    id: "qa-alina-yu",
-    name: "Алина Ю.",
-    category: "QA",
-    grade: "Middle",
-    specialization: "QA: Manual",
-    location: "РФ",
-    rate: "уточняется",
-    experience: "3+ лет",
-    status: "Свободен",
-    availableFrom: "2 недели",
-    cv: "https://disk.360.yandex.ru/d/SvKJpb6Pjcfdrg",
-    manager: managers.anastasia,
+    letter: "QA Lead Engineer с опытом более 9 лет в тестировании, включая 1 год управления группой тестирования, 6 лет ручного тестирования и 2 года автоматизации. Имеет опыт в банковском и финтех-секторе, работе по Scrum, SAFe и ProPro, применении Shift-Left-подхода и переходе от монолитной системы к микросервисной архитектуре. Уверенно работает с Jira, Confluence, Сферой, Postman, JMeter, Selenium, PostgreSQL, Oracle, REST API, SOAP, Kafka, Kubernetes и Kibana. На проектах Иннотеха руководил тестированием микросервисов учета блокировок и арестов счетов, готовил тест-планы, гайдлайны, ревью документации, ПСИ и демо-показы, а также разработал инструмент для быстрого создания тестовых JSON-данных.",
   },
   {
     id: "qa-mikhail-r",
@@ -93,6 +53,7 @@ const specialists = [
     availableFrom: "asap",
     cv: "https://disk.360.yandex.ru/d/EQpi7VsQwGSoIw",
     manager: managers.anastasia,
+    letter: "Manual QA Engineer с опытом 6 лет 2 месяца в тестировании ERP, BPM, розничных и мобильных решений. Уверенно работает с SQL/PostgreSQL, Postman, Swagger, SoapUI, Insomnia, Zephyr, Jira, Confluence, Git, Kibana, OpenShift, Android Studio, Xcode, REST, SOAP, Kafka и 1C:УТ 11. Имеет опыт функционального, регрессионного, интеграционного и приемочного тестирования, тестирования документации, API, мок-сервисов, мобильных приложений и хранимых данных через DBeaver. На проекте Сбера по BPM-системе помощи юристам покрывал интеграционные процессы тестами, не допустил в прод блокирующие и критичные дефекты, а также давал обратную связь по AI-агентам для создания тестовых сценариев.",
   },
   {
     id: "backend-pavel-k",
@@ -107,6 +68,7 @@ const specialists = [
     availableFrom: "готов к старту",
     cv: "https://disk.360.yandex.ru/d/X_aUde5JS6VycA",
     manager: managers.ekaterina,
+    letter: "Java-разработчик с опытом более 9 лет в разработке банковских, портальных и корпоративных решений. Уверенно работает с Java, Kotlin, Groovy, Spring Boot, Spring Data JPA, Spring Security, Spring Batch, Vaadin, React, Angular, Oracle, PostgreSQL, Maven, Gradle, JUnit, REST API, SOAP, S3, Kafka, Docker и микросервисной архитектурой. Имеет опыт разработки backend-логики, UI на Vaadin, интеграций, загрузки файлов, документооборота, отчетности и оптимизации производительности. На проекте Совкомбанк Технологии развивал web-приложение «Кредиты» для корпоративных сервисов, переводил UI с deprecated API Vaadin, внедрял S3-хранилище, расширял чат, дорабатывал отчетность и снижал технический долг.",
   },
   {
     id: "backend-yuriy-t",
@@ -121,20 +83,7 @@ const specialists = [
     availableFrom: "asap",
     cv: "https://disk.360.yandex.ru/i/Sh6MYUPcJSoO1Q",
     manager: managers.ekaterina,
-  },
-  {
-    id: "backend-vyacheslav-s",
-    name: "Вячеслав С.",
-    category: "Backend",
-    grade: "Senior",
-    specialization: "Backend: Go",
-    location: "РФ",
-    rate: "уточняется",
-    experience: "4+ лет",
-    status: "Свободен",
-    availableFrom: "готов к старту",
-    cv: "https://disk.360.yandex.ru/i/RwGnkEsFfH6d2g",
-    manager: managers.ekaterina,
+    letter: "Java-разработчик с опытом 12 лет в банках, финтехе и электронном документообороте. Уверенно работает с Java, Kotlin, Spring Framework, Spring Boot, Hibernate, JDBC, JOOQ, SQL, PostgreSQL, Oracle, MSSQL, Liquibase, MongoDB, Maven, Jenkins, Gradle, JUnit, Mockito, Kotest, SOAP, REST, Kafka, Docker, Kubernetes, Jira, Confluence и Git. Имеет опыт разработки и сопровождения банковских микросервисов, интеграций с внутренними системами банка, бизнес-оркестрации и повышения надежности сервисов. На проектах ВТБ, Хоум Банка и БСС занимался импортозамещением, разработкой сервисов по карточным операциям и депозитам ЮЛ, развитием чат- и голосовых ботов, а также ДБО для юридических лиц.",
   },
   {
     id: "frontend-roman-m",
@@ -149,6 +98,7 @@ const specialists = [
     availableFrom: "готов к старту",
     cv: "https://disk.360.yandex.ru/i/jIqdPKDTr4J0kw",
     manager: managers.anastasia,
+    letter: "Ведущий Frontend-разработчик с опытом более 7 лет в банковском, финтех- и логистическом доменах. Уверенно работает с TypeScript, JavaScript, React, React Native, NestJS, Express, Electron, Angular, FSD, Redux, Effector, PostgreSQL, TypeORM, Webpack, Vite, Jest, Enzyme, Cypress, REST API, Socket.IO, Docker, Material UI, Tailwind, Styled-Components и React Hook Form. Имеет опыт работы в Scrum-командах от 2 до 30 человек, включая роль тимлида, настройку unit- и e2e-тестов и развитие сложных интерфейсов. На проектах NRB и Сбербанка разрабатывал административные панели, адаптивные таблицы, формы, интеграции с API, внедрял Feature-Sliced Design, переходил с Redux на Effector и оптимизировал поддержку frontend-кода.",
   },
   {
     id: "frontend-nikita-r",
@@ -163,6 +113,7 @@ const specialists = [
     availableFrom: "asap",
     cv: "https://disk.360.yandex.ru/i/u5ToO7iV8KB_yg",
     manager: managers.anastasia,
+    letter: "Frontend-разработчик с опытом более 4 лет в информационных технологиях и HR-Tech, также имеющий практический fullstack-опыт. Уверенно работает с JavaScript, TypeScript, React, Vite, Webpack, Sass, Less, Vitest, AntDesign, MUI, React Bootstrap, BEM, Chrome DevTools, React Developer Tools, REST API, Jira, Confluence и Git. Имеет опыт разработки административных кабинетов, таблиц с поиском, пагинацией и фильтрацией, интерактивных форм, загрузки и обработки изображений, интеграции с API и настройки Nginx для Next.js-приложений. На проектах «Все моторы», NRB и «Мой Край» проектировал frontend- и backend-части, реализовывал REST API, работал с PostgreSQL и оптимизировал UX административных интерфейсов.",
   },
   {
     id: "frontend-stanislav-p",
@@ -177,73 +128,9 @@ const specialists = [
     availableFrom: "asap",
     cv: "https://disk.360.yandex.ru/d/o7mvEeMPk8kWVw",
     manager: managers.anastasia,
+    letter: "Frontend-разработчик с опытом 4 года 9 месяцев в проектах для туризма, маркетплейсов и организации рабочих процессов. Уверенно работает с JavaScript, TypeScript, React, React Hook Form, Redux, Material UI, Ant Design, Axios, HTML, CSS, БЭМ, Jest, React Testing Library, Cypress, PostgreSQL, Vite, Webpack, Zustand, REST, GraphQL, Docker, GitLab, Postman, Node.js, Jira и Confluence. Имеет опыт разработки интерфейсов админ-панелей, таблиц с поиском, пагинацией и фильтрацией, форм создания и редактирования продуктов, модальных окон, ролевых ограничений и работы с изображениями через Canvas. На проектах Marketplace TN, «Мой Край» и АИС разрабатывал React-интерфейсы, покрывал ключевые модули тестами и оптимизировал работу пользовательских сценариев.",
   },
-  {
-    id: "design-daria-i",
-    name: "Дарья И.",
-    category: "Дизайн",
-    grade: "Middle+",
-    specialization: "Дизайн: UX / UI",
-    location: "РФ",
-    rate: "уточняется",
-    experience: "3+ лет",
-    status: "Свободен",
-    availableFrom: "по согласованию",
-    cv: "https://disk.360.yandex.ru/i/FwlKfVtYPMalNw",
-    manager: managers.anastasia,
-  },
-  {
-    id: "analytics-alina-b",
-    name: "Алина Б.",
-    category: "Аналитика",
-    grade: "Middle",
-    specialization: "Аналитика: системный аналитик",
-    location: "РФ",
-    rate: "уточняется",
-    experience: "3+ лет",
-    status: "На проекте",
-    availableFrom: "по согласованию",
-    cv: "https://disk.360.yandex.ru/i/xUm-DseGopH1gw",
-    manager: managers.anastasia,
-  },
-  {
-    id: "devops-maksim-b",
-    name: "Максим Б.",
-    category: "DevOps",
-    grade: "Middle",
-    specialization: "DevOps: системный администратор",
-    location: "РФ",
-    rate: "уточняется",
-    experience: "4+ лет",
-    status: "Свободен",
-    availableFrom: "asap",
-    cv: "https://disk.360.yandex.ru/d/eubEDNUm_hAAGA",
-    manager: managers.ekaterina,
-  },
-  {
-    id: "pm-nikita-l",
-    name: "Никита Л.",
-    category: "PM",
-    grade: "Senior",
-    specialization: "PM: руководитель проекта",
-    location: "РФ",
-    rate: "уточняется",
-    experience: "8+ лет",
-    status: "Свободен",
-    availableFrom: "готов к старту",
-    cv: "https://disk.360.yandex.ru/i/eshYVQilwXZoGA",
-    manager: managers.ekaterina,
-  },
-].map((specialist) => ({
-  ...specialist,
-  letter:
-    specialist.letter != null
-      ? specialist.letter
-      : `${specialist.name} — ${specialist.grade} специалист направления ${specialist.specialization}. ` +
-      `Опыт: ${specialist.experience}. Локация: ${specialist.location}. ` +
-      `Текущий статус: ${specialist.status}; предварительный выход: ${specialist.availableFrom}. ` +
-      `Для уточнения деталей, ставки и доступности свяжитесь с ответственным менеджером: ${specialist.manager.name}.`,
-}));
+];
 
 const benchBody = document.querySelector("#bench-body");
 const letterModal = document.querySelector("#letter-modal");
@@ -252,7 +139,7 @@ const modalCloseControls = letterModal ? letterModal.querySelectorAll("[data-mod
 const modalTitle = document.querySelector("#letter-modal-title");
 const modalText = document.querySelector("#letter-modal-text");
 const revealTargets = document.querySelectorAll(
-  ".section-heading, .bench-table-wrap, .site-footer > *",
+  ".section-heading, .bench-table-wrap, .site-footer .footer-inner",
 );
 
 let lastFocusedElement = null;
@@ -332,9 +219,19 @@ function createSpecialistRow(specialist) {
   const letterButton = document.createElement("button");
   letterButton.className = "table-action primary";
   letterButton.type = "button";
-  letterButton.textContent = "Открыть";
   letterButton.setAttribute("aria-label", `Открыть сопроводительное письмо специалиста ${specialist.name}`);
   letterButton.addEventListener("click", () => openLetterModal(specialist));
+
+  const desktopText = document.createElement("span");
+  desktopText.className = "btn-desktop-text";
+  desktopText.textContent = "Открыть";
+
+  const mobileText = document.createElement("span");
+  mobileText.className = "btn-mobile-text";
+  mobileText.textContent = "Коротко про опыт";
+
+  letterButton.appendChild(desktopText);
+  letterButton.appendChild(mobileText);
 
   [
     createCell("Специалист", nameWrap),
@@ -344,7 +241,7 @@ function createSpecialistRow(specialist) {
     createCell("Ставка", specialist.rate),
     createCell("Опыт", specialist.experience),
     createCell("CV", createActionLink("CV", specialist.cv, "", `Открыть CV специалиста ${specialist.name}`)),
-    createCell("Письмо", letterButton),
+    createCell("Коротко про опыт", letterButton),
     createCell(
       "Контакт",
       createActionLink("Telegram", specialist.manager.telegram, "telegram", `Связаться с менеджером: ${specialist.manager.name}`),
@@ -354,6 +251,85 @@ function createSpecialistRow(specialist) {
   return row;
 }
 
+const activeFilters = {
+  role: null,
+  specialization: null,
+  grade: null,
+};
+
+function getUniqueValues(key) {
+  const values = new Set();
+  specialists.forEach((s) => {
+    const specParts = splitSpecialization(s.specialization);
+    if (key === "role") values.add(specParts.role);
+    else if (key === "specialization") values.add(specParts.specialization);
+    else if (key === "grade") values.add(s.grade);
+  });
+  return Array.from(values).sort();
+}
+
+function filterSpecialists() {
+  return specialists.filter((s) => {
+    const specParts = splitSpecialization(s.specialization);
+    if (activeFilters.role && specParts.role !== activeFilters.role) return false;
+    if (activeFilters.specialization && specParts.specialization !== activeFilters.specialization) return false;
+    if (activeFilters.grade && s.grade !== activeFilters.grade) return false;
+    return true;
+  });
+}
+
+function renderFilters() {
+  const toolbar = document.querySelector("#bench-toolbar");
+  if (!toolbar) return;
+
+  toolbar.innerHTML = "";
+
+  const filters = [
+    { key: "role", label: "Специализация" },
+    { key: "specialization", label: "Стек" },
+    { key: "grade", label: "Грейд" },
+  ];
+
+  filters.forEach(({ key, label }) => {
+    const group = document.createElement("div");
+    group.className = "filter-group";
+    group.setAttribute("role", "group");
+    group.setAttribute("aria-label", label);
+
+    const labelEl = document.createElement("div");
+    labelEl.className = "filter-group-label";
+    labelEl.textContent = label;
+    group.appendChild(labelEl);
+
+    const chipsWrap = document.createElement("div");
+    chipsWrap.className = "filter-chips";
+
+    const values = getUniqueValues(key);
+    values.forEach((value) => {
+      const chip = document.createElement("button");
+      chip.className = "filter-chip";
+      chip.type = "button";
+      chip.textContent = value;
+      chip.setAttribute("aria-pressed", activeFilters[key] === value ? "true" : "false");
+
+      if (activeFilters[key] === value) {
+        chip.classList.add("active");
+      }
+
+      chip.addEventListener("click", () => {
+        activeFilters[key] = activeFilters[key] === value ? null : value;
+        renderFilters();
+        renderBench();
+      });
+
+      chipsWrap.appendChild(chip);
+    });
+
+    group.appendChild(chipsWrap);
+    toolbar.appendChild(group);
+  });
+}
+
 function renderBench() {
   if (!benchBody) {
     return;
@@ -361,10 +337,25 @@ function renderBench() {
 
   benchBody.textContent = "";
 
-  specialists.forEach((specialist) => {
+  const filtered = filterSpecialists();
+
+  if (filtered.length === 0) {
+    const emptyRow = document.createElement("tr");
+    const emptyCell = document.createElement("td");
+    emptyCell.colSpan = 9;
+    emptyCell.className = "empty-state";
+    emptyCell.textContent = "Нет специалистов, соответствующих фильтрам";
+    emptyRow.appendChild(emptyCell);
+    benchBody.appendChild(emptyRow);
+    return;
+  }
+
+  filtered.forEach((specialist) => {
     benchBody.appendChild(createSpecialistRow(specialist));
   });
 }
+
+renderFilters();
 
 function openLetterModal(specialist) {
   if (!letterModal || !modalDialog || !modalTitle || !modalText) {
