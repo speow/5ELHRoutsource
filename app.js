@@ -389,50 +389,106 @@ function renderFilters() {
 
   toolbar.innerHTML = "";
 
-  const filters = [
-    { key: "role", label: "Специализация" },
-    { key: "specialization", label: "Стек" },
-    { key: "grade", label: "Грейд" },
-  ];
+  const hasRole = activeFilters.role !== null;
 
-  filters.forEach(({ key, label }) => {
-    const group = document.createElement("div");
-    group.className = "filter-group";
-    group.setAttribute("role", "group");
-    group.setAttribute("aria-label", label);
+  // Всегда показываем фильтр «Специализация» (роль)
+  renderFilterGroup(toolbar, "role", "Специализация", getUniqueValues("role"), true);
 
-    const labelEl = document.createElement("div");
-    labelEl.className = "filter-group-label";
-    labelEl.textContent = label;
-    group.appendChild(labelEl);
+  if (!hasRole) {
+    // Пока роль не выбрана — показываем подсказку вместо фильтров
+    const hint = document.createElement("div");
+    hint.className = "filter-hint";
+    hint.innerHTML = `
+      <div class="filter-hint-icon">👆</div>
+      <p>Выберите специализацию, чтобы открыть фильтры по стеку и грейду</p>
+    `;
+    toolbar.appendChild(hint);
+    return;
+  }
 
-    const chipsWrap = document.createElement("div");
-    chipsWrap.className = "filter-chips";
+  // Фильтр «Стек» — только когда выбрана роль
+  const specValues = getFilteredValues("specialization", { role: activeFilters.role });
+  renderFilterGroup(toolbar, "specialization", "Стек", specValues, true);
 
-    const values = getUniqueValues(key);
-    values.forEach((value) => {
-      const chip = document.createElement("button");
-      chip.className = "filter-chip";
-      chip.type = "button";
-      chip.textContent = value;
-      chip.setAttribute("aria-pressed", activeFilters[key] === value ? "true" : "false");
+  // Фильтр «Грейд» — только когда выбрана роль (и опционально стек)
+  const gradeValues = getFilteredValues("grade", { role: activeFilters.role, specialization: activeFilters.specialization });
+  renderFilterGroup(toolbar, "grade", "Грейд", gradeValues, true);
+}
 
-      if (activeFilters[key] === value) {
-        chip.classList.add("active");
-      }
+function renderFilterGroup(toolbar, key, label, values, enabled) {
+  const group = document.createElement("div");
+  group.className = "filter-group";
+  group.setAttribute("role", "group");
+  group.setAttribute("aria-label", label);
 
+  if (!enabled) {
+    group.classList.add("filter-group-disabled");
+  }
+
+  const labelEl = document.createElement("div");
+  labelEl.className = "filter-group-label";
+  labelEl.textContent = label;
+  group.appendChild(labelEl);
+
+  const chipsWrap = document.createElement("div");
+  chipsWrap.className = "filter-chips";
+
+  values.forEach((value) => {
+    const chip = document.createElement("button");
+    chip.className = "filter-chip";
+    chip.type = "button";
+    chip.textContent = value;
+    chip.setAttribute("aria-pressed", activeFilters[key] === value ? "true" : "false");
+
+    if (activeFilters[key] === value) {
+      chip.classList.add("active");
+    }
+
+    if (!enabled) {
+      chip.classList.add("filter-chip-disabled");
+      chip.setAttribute("disabled", "true");
+    } else {
       chip.addEventListener("click", () => {
         activeFilters[key] = activeFilters[key] === value ? null : value;
+        // При смене роли — сбрасываем стек и грейд
+        if (key === "role") {
+          activeFilters.specialization = null;
+          activeFilters.grade = null;
+        }
+        // При смене стека — сбрасываем грейд
+        if (key === "specialization") {
+          activeFilters.grade = null;
+        }
         renderFilters();
         renderBench();
       });
+    }
 
-      chipsWrap.appendChild(chip);
-    });
-
-    group.appendChild(chipsWrap);
-    toolbar.appendChild(group);
+    chipsWrap.appendChild(chip);
   });
+
+  group.appendChild(chipsWrap);
+  toolbar.appendChild(group);
+}
+
+/**
+ * Возвращает уникальные значения для ключа, отфильтрованные по уже выбранным фильтрам.
+ * Например, если выбрана роль "Backend", вернёт только стеки бэкендеров.
+ */
+function getFilteredValues(key, activeRoleAndSpec) {
+  const values = new Set();
+  specialists.forEach((s) => {
+    const specParts = splitSpecialization(s.specialization);
+
+    // Проверяем соответствие уже выбранным фильтрам
+    if (activeRoleAndSpec.role && specParts.role !== activeRoleAndSpec.role) return;
+    if (activeRoleAndSpec.specialization && specParts.specialization !== activeRoleAndSpec.specialization) return;
+
+    if (key === "role") values.add(specParts.role);
+    else if (key === "specialization") values.add(specParts.specialization);
+    else if (key === "grade") values.add(s.grade);
+  });
+  return Array.from(values).sort();
 }
 
 function renderBench() {
