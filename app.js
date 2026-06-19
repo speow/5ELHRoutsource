@@ -74,7 +74,7 @@ const specialists = [
     "id": "backend-1",
     "name": "Дмитрий Б.",
     "category": "Backend",
-    "grade": "Middle +",
+    "grade": "Middle+",
     "specialization": "Backend: Java",
     "location": "РФ",
     "rate": "2500 ₽/ч",
@@ -178,9 +178,9 @@ const specialists = [
   {
     "id": "ios-1",
     "name": "Ульяна Г.",
-    "category": "IOS",
+    "category": "iOS",
     "grade": "Middle",
-    "specialization": "IOS: IOS",
+    "specialization": "iOS: iOS",
     "location": "РФ",
     "rate": "1500 ₽/ч",
     "experience": "4+ лет",
@@ -359,7 +359,7 @@ function createSpecialistRow(specialist) {
 const activeFilters = {
   role: null,
   specialization: null,
-  grade: null,
+  grade: [], // массив для мультивыбора
 };
 
 function getUniqueValues(key) {
@@ -378,7 +378,7 @@ function filterSpecialists() {
     const specParts = splitSpecialization(s.specialization);
     if (activeFilters.role && specParts.role !== activeFilters.role) return false;
     if (activeFilters.specialization && specParts.specialization !== activeFilters.specialization) return false;
-    if (activeFilters.grade && s.grade !== activeFilters.grade) return false;
+    if (activeFilters.grade.length > 0 && !activeFilters.grade.includes(s.grade)) return false;
     return true;
   });
 }
@@ -421,13 +421,18 @@ function renderFilterGroup(toolbar, key, label, values, enabled) {
   group.setAttribute("role", "group");
   group.setAttribute("aria-label", label);
 
-  if (!enabled) {
-    group.classList.add("filter-group-disabled");
-  }
-
   const labelEl = document.createElement("div");
   labelEl.className = "filter-group-label";
   labelEl.textContent = label;
+
+  // Для грейда показываем счётчик выбранных
+  if (key === "grade" && enabled && activeFilters.grade.length > 0) {
+    const count = document.createElement("span");
+    count.className = "filter-count";
+    count.textContent = activeFilters.grade.length;
+    labelEl.appendChild(count);
+  }
+
   group.appendChild(labelEl);
 
   const chipsWrap = document.createElement("div");
@@ -438,9 +443,14 @@ function renderFilterGroup(toolbar, key, label, values, enabled) {
     chip.className = "filter-chip";
     chip.type = "button";
     chip.textContent = value;
-    chip.setAttribute("aria-pressed", activeFilters[key] === value ? "true" : "false");
 
-    if (activeFilters[key] === value) {
+    const isSelected = key === "grade"
+      ? activeFilters.grade.includes(value)
+      : activeFilters[key] === value;
+
+    chip.setAttribute("aria-pressed", isSelected ? "true" : "false");
+
+    if (isSelected) {
       chip.classList.add("active");
     }
 
@@ -449,15 +459,26 @@ function renderFilterGroup(toolbar, key, label, values, enabled) {
       chip.setAttribute("disabled", "true");
     } else {
       chip.addEventListener("click", () => {
-        activeFilters[key] = activeFilters[key] === value ? null : value;
-        // При смене роли — сбрасываем стек и грейд
-        if (key === "role") {
-          activeFilters.specialization = null;
-          activeFilters.grade = null;
-        }
-        // При смене стека — сбрасываем грейд
-        if (key === "specialization") {
-          activeFilters.grade = null;
+        if (key === "grade") {
+          // Мультивыбор для грейда
+          const idx = activeFilters.grade.indexOf(value);
+          if (idx === -1) {
+            activeFilters.grade.push(value);
+          } else {
+            activeFilters.grade.splice(idx, 1);
+          }
+        } else {
+          // Одиночный выбор для роли и стека
+          activeFilters[key] = activeFilters[key] === value ? null : value;
+          // При смене роли — сбрасываем стек и грейд
+          if (key === "role") {
+            activeFilters.specialization = null;
+            activeFilters.grade = [];
+          }
+          // При смене стека — сбрасываем грейд
+          if (key === "specialization") {
+            activeFilters.grade = [];
+          }
         }
         renderFilters();
         renderBench();
@@ -530,7 +551,7 @@ function renderBench() {
     resetBtn.addEventListener("click", () => {
       activeFilters.role = null;
       activeFilters.specialization = null;
-      activeFilters.grade = null;
+      activeFilters.grade = [];
       renderFilters();
       renderBench();
     });
