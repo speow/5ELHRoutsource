@@ -11,125 +11,230 @@ const managers = {
 
 const specialists = [
   {
-    id: "qa-yaroslav-sh",
-    name: "Ярослав Ш.",
-    category: "QA",
-    grade: "Lead",
-    specialization: "QA: Manual",
-    location: "РФ",
-    rate: "2600 ₽/ч",
-    experience: "4+ лет",
-    status: "На проекте",
-    availableFrom: "по согласованию",
-    cv: "https://disk.360.yandex.ru/i/XulrP8z0KPzH3A",
-    manager: managers.anastasia,
-    letter: "Специалист по тестированию ПО с опытом более 5 лет в финтехе, промышленности и автоматизации. Уверенно работает с PostgreSQL, SQL-запросами, TestRail, Jira, Confluence, Postman, Swagger, GitLab, Kibana, Kafka, Kubernetes, JMeter, Fiddler и DevTools. Имеет опыт ручного тестирования backend, web- и мобильных приложений, тестирования документации, API, интеграций, логов, интерфейсов, а также проведения функционального, системного, регрессионного, нагрузочного и стресс-тестирования. На проектах ГК Иннотех и RCM-Навигатор 2.0 тестировал банковские сервисы по депозитам юридических лиц и систему управления надежностью промышленного оборудования, поддерживал тестовую документацию и взаимодействовал с аналитиками и разработчиками.",
+    "id": "qa-1",
+    "name": "Константин А.",
+    "category": "QA",
+    "grade": "Middle-",
+    "specialization": "QA: Manual",
+    "location": "РФ",
+    "rate": "1500 ₽/ч",
+    "experience": "2+ лет",
+    "status": "Свободен",
+    "availableFrom": "по запросу",
+    "cv": "https://disk.360.yandex.ru/d/4ijC4-G6xFEGgg",
+    "manager": managers.anastasia,
+    "letter": "Manual QA Engineer с опытом 2 года 10 месяцев в тестировании веб- и мобильных продуктов, а также в работе с распределенными командами. Уверенно использует Postman, SoapUI, TestRail, Jira, Confluence, Swagger, DBeaver, DevTools, Fiddler, OpenSearch, Headlamp Kubernetes UI, Lens, Docker, Kubernetes, PostgreSQL и базовый SQL. Имеет опыт функционального, регрессионного, системного, интеграционного и UI/UX-тестирования, подготовки чек-листов, тест-кейсов и тест-планов. На проектах ЕДЦ и NRB тестировал web-интерфейсы, Android-приложение, интеграции с внешними системами, трассировку логов в Kubernetes и участвовал в контроле исправления дефектов до релиза."
   },
   {
-    id: "qa-evgeniy-s",
-    name: "Евгений С.",
-    category: "QA",
-    grade: "Lead",
-    specialization: "QA: Manual",
-    location: "РФ",
-    rate: "3100 ₽/ч",
-    experience: "9+ лет",
-    status: "На проекте",
-    availableFrom: "по согласованию",
-    cv: "https://disk.360.yandex.ru/i/1xiMXNwvI9oZsw",
-    manager: managers.anastasia,
-    letter: "QA Lead Engineer с опытом более 9 лет в тестировании, включая 1 год управления группой тестирования, 6 лет ручного тестирования и 2 года автоматизации. Имеет опыт в банковском и финтех-секторе, работе по Scrum, SAFe и ProPro, применении Shift-Left-подхода и переходе от монолитной системы к микросервисной архитектуре. Уверенно работает с Jira, Confluence, Сферой, Postman, JMeter, Selenium, PostgreSQL, Oracle, REST API, SOAP, Kafka, Kubernetes и Kibana. На проектах Иннотеха руководил тестированием микросервисов учета блокировок и арестов счетов, готовил тест-планы, гайдлайны, ревью документации, ПСИ и демо-показы, а также разработал инструмент для быстрого создания тестовых JSON-данных.",
+    "id": "qa-2",
+    "name": "Ярослав Ш.",
+    "category": "QA",
+    "grade": "Lead",
+    "specialization": "QA: Manual",
+    "location": "РФ",
+    "rate": "2600 ₽/ч",
+    "experience": "5+ лет",
+    "status": "Свободен",
+    "availableFrom": "по согласованию",
+    "cv": "https://disk.360.yandex.ru/i/inWqj0XpnyPt-Q",
+    "manager": managers.anastasia,
+    "letter": "Специалист по тестированию ПО с опытом более 5 лет в финтехе, промышленности и автоматизации. Уверенно работает с PostgreSQL, SQL-запросами, TestRail, Jira, Confluence, Postman, Swagger, GitLab, Kibana, Kafka, Kubernetes, JMeter, Fiddler и DevTools. Имеет опыт ручного тестирования backend, web- и мобильных приложений, тестирования документации, API, интеграций, логов, интерфейсов, а также проведения функционального, системного, регрессионного, нагрузочного и стресс-тестирования. На проектах ГК Иннотех и RCM-Навигатор 2.0 тестировал банковские сервисы по депозитам юридических лиц и систему управления надежностью промышленного оборудования, поддерживал тестовую документацию и взаимодействовал с аналитиками и разработчиками."
   },
   {
-    id: "qa-mikhail-r",
-    name: "Михаил Р.",
-    category: "QA",
-    grade: "Middle+",
-    specialization: "QA: Manual",
-    location: "РФ",
-    rate: "2100 ₽/ч",
-    experience: "6+ лет",
-    status: "Свободен",
-    availableFrom: "asap",
-    cv: "https://disk.360.yandex.ru/d/EQpi7VsQwGSoIw",
-    manager: managers.anastasia,
-    letter: "Manual QA Engineer с опытом 6 лет 2 месяца в тестировании ERP, BPM, розничных и мобильных решений. Уверенно работает с SQL/PostgreSQL, Postman, Swagger, SoapUI, Insomnia, Zephyr, Jira, Confluence, Git, Kibana, OpenShift, Android Studio, Xcode, REST, SOAP, Kafka и 1C:УТ 11. Имеет опыт функционального, регрессионного, интеграционного и приемочного тестирования, тестирования документации, API, мок-сервисов, мобильных приложений и хранимых данных через DBeaver. На проекте Сбера по BPM-системе помощи юристам покрывал интеграционные процессы тестами, не допустил в прод блокирующие и критичные дефекты, а также давал обратную связь по AI-агентам для создания тестовых сценариев.",
+    "id": "qa-3",
+    "name": "Евгений С.",
+    "category": "QA",
+    "grade": "Lead",
+    "specialization": "QA: Manual",
+    "location": "РФ",
+    "rate": "3100 ₽/ч",
+    "experience": "9+ лет",
+    "status": "Свободен",
+    "availableFrom": "по согласованию",
+    "cv": "https://disk.360.yandex.ru/i/27kf-ZAbumKceQ",
+    "manager": managers.anastasia,
+    "letter": "QA Lead Engineer с опытом более 9 лет в тестировании, включая 1 год управления группой тестирования, 6 лет ручного тестирования и 2 года автоматизации. Имеет опыт в банковском и финтех-секторе, работе по Scrum, SAFe и ProPro, применении Shift-Left-подхода и переходе от монолитной системы к микросервисной архитектуре. Уверенно работает с Jira, Confluence, Сферой, Postman, JMeter, Selenium, PostgreSQL, Oracle, REST API, SOAP, Kafka, Kubernetes и Kibana. На проектах Иннотеха руководил тестированием микросервисов учета блокировок и арестов счетов, готовил тест-планы, гайдлайны, ревью документации, ПСИ и демо-показы, а также разработал инструмент для быстрого создания тестовых JSON-данных."
   },
   {
-    id: "backend-pavel-k",
-    name: "Павел К.",
-    category: "Backend",
-    grade: "Senior",
-    specialization: "Backend: Java",
-    location: "РФ",
-    rate: "3100 ₽/ч",
-    experience: "9+ лет",
-    status: "Свободен",
-    availableFrom: "готов к старту",
-    cv: "https://disk.360.yandex.ru/d/X_aUde5JS6VycA",
-    manager: managers.ekaterina,
-    letter: "Java-разработчик с опытом более 9 лет в разработке банковских, портальных и корпоративных решений. Уверенно работает с Java, Kotlin, Groovy, Spring Boot, Spring Data JPA, Spring Security, Spring Batch, Vaadin, React, Angular, Oracle, PostgreSQL, Maven, Gradle, JUnit, REST API, SOAP, S3, Kafka, Docker и микросервисной архитектурой. Имеет опыт разработки backend-логики, UI на Vaadin, интеграций, загрузки файлов, документооборота, отчетности и оптимизации производительности. На проекте Совкомбанк Технологии развивал web-приложение «Кредиты» для корпоративных сервисов, переводил UI с deprecated API Vaadin, внедрял S3-хранилище, расширял чат, дорабатывал отчетность и снижал технический долг.",
+    "id": "qa-4",
+    "name": "Михаил Р.",
+    "category": "QA",
+    "grade": "Middle+",
+    "specialization": "QA: Manual",
+    "location": "РФ",
+    "rate": "2100 ₽/ч",
+    "experience": "6+ лет",
+    "status": "Свободен",
+    "availableFrom": "asap",
+    "cv": "https://disk.360.yandex.ru/d/EQpi7VsQwGSoIw",
+    "manager": managers.anastasia,
+    "letter": "Manual QA Engineer с опытом 6 лет 2 месяца в тестировании ERP, BPM, розничных и мобильных решений. Уверенно работает с SQL/PostgreSQL, Postman, Swagger, SoapUI, Insomnia, Zephyr, Jira, Confluence, Git, Kibana, OpenShift, Android Studio, Xcode, REST, SOAP, Kafka и 1C:УТ 11. Имеет опыт функционального, регрессионного, интеграционного и приемочного тестирования, тестирования документации, API, мок-сервисов, мобильных приложений и хранимых данных через DBeaver. На проекте Сбера по BPM-системе помощи юристам покрывал интеграционные процессы тестами, не допустил в прод блокирующие и критичные дефекты, а также давал обратную связь по AI-агентам для создания тестовых сценариев."
   },
   {
-    id: "backend-yuriy-t",
-    name: "Юрий Т.",
-    category: "Backend",
-    grade: "Middle+",
-    specialization: "Backend: Java",
-    location: "РФ",
-    rate: "2750 ₽/ч",
-    experience: "12+ лет",
-    status: "Свободен",
-    availableFrom: "asap",
-    cv: "https://disk.360.yandex.ru/i/Sh6MYUPcJSoO1Q",
-    manager: managers.ekaterina,
-    letter: "Java-разработчик с опытом 12 лет в банках, финтехе и электронном документообороте. Уверенно работает с Java, Kotlin, Spring Framework, Spring Boot, Hibernate, JDBC, JOOQ, SQL, PostgreSQL, Oracle, MSSQL, Liquibase, MongoDB, Maven, Jenkins, Gradle, JUnit, Mockito, Kotest, SOAP, REST, Kafka, Docker, Kubernetes, Jira, Confluence и Git. Имеет опыт разработки и сопровождения банковских микросервисов, интеграций с внутренними системами банка, бизнес-оркестрации и повышения надежности сервисов. На проектах ВТБ, Хоум Банка и БСС занимался импортозамещением, разработкой сервисов по карточным операциям и депозитам ЮЛ, развитием чат- и голосовых ботов, а также ДБО для юридических лиц.",
+    "id": "backend-1",
+    "name": "Дмитрий Б.",
+    "category": "Backend",
+    "grade": "Middle +",
+    "specialization": "Backend: Java",
+    "location": "РФ",
+    "rate": "2500 ₽/ч",
+    "experience": "3+ лет",
+    "status": "Свободен",
+    "availableFrom": "по запросу",
+    "cv": "https://disk.360.yandex.ru/i/0r3ySRI_lStX0g",
+    "manager": managers.ekaterina,
+    "letter": "Java-разработчик с опытом 4 года в разработке backend- и микросервисных решений. Уверенно работает с Java 11/17/21, Spring Boot, Spring Data JPA, Spring Security, Spring Cloud, OpenFeign, Hibernate, Lombok, MapStruct, Liquibase, PostgreSQL, MS SQL Server, Kafka, Consul, Actuator, Prometheus, JUnit 5, Mockito, Maven и Git. Имеет опыт проектирования REST API, реализации бизнес-логики, интеграций и асинхронного взаимодействия между сервисами. На проекте METRO MCredit разрабатывал систему кредитования юридических лиц, реализовывал Kafka-механизмы синхронизации клиентских данных, выборочную блокировку бизнес-операций и event-driven обработку бизнес-событий через Kafka и Node-RED."
   },
   {
-    id: "frontend-roman-m",
-    name: "Роман М.",
-    category: "Frontend",
-    grade: "Senior",
-    specialization: "Frontend: React",
-    location: "РФ",
-    rate: "2100 ₽/ч",
-    experience: "7+ лет",
-    status: "Свободен",
-    availableFrom: "готов к старту",
-    cv: "https://disk.360.yandex.ru/i/jIqdPKDTr4J0kw",
-    manager: managers.anastasia,
-    letter: "Ведущий Frontend-разработчик с опытом более 7 лет в банковском, финтех- и логистическом доменах. Уверенно работает с TypeScript, JavaScript, React, React Native, NestJS, Express, Electron, Angular, FSD, Redux, Effector, PostgreSQL, TypeORM, Webpack, Vite, Jest, Enzyme, Cypress, REST API, Socket.IO, Docker, Material UI, Tailwind, Styled-Components и React Hook Form. Имеет опыт работы в Scrum-командах от 2 до 30 человек, включая роль тимлида, настройку unit- и e2e-тестов и развитие сложных интерфейсов. На проектах NRB и Сбербанка разрабатывал административные панели, адаптивные таблицы, формы, интеграции с API, внедрял Feature-Sliced Design, переходил с Redux на Effector и оптимизировал поддержку frontend-кода.",
+    "id": "backend-2",
+    "name": "Павел К.",
+    "category": "Backend",
+    "grade": "Senior",
+    "specialization": "Backend: Java",
+    "location": "РФ",
+    "rate": "3100 ₽/ч",
+    "experience": "9+ лет",
+    "status": "Свободен",
+    "availableFrom": "по запросу",
+    "cv": "https://disk.360.yandex.ru/d/X_aUde5JS6VycA",
+    "manager": managers.ekaterina,
+    "letter": "Java-разработчик с опытом более 9 лет в разработке банковских, портальных и корпоративных решений. Уверенно работает с Java, Kotlin, Groovy, Spring Boot, Spring Data JPA, Spring Security, Spring Batch, Vaadin, React, Angular, Oracle, PostgreSQL, Maven, Gradle, JUnit, REST API, SOAP, S3, Kafka, Docker и микросервисной архитектурой. Имеет опыт разработки backend-логики, UI на Vaadin, интеграций, загрузки файлов, документооборота, отчетности и оптимизации производительности. На проекте Совкомбанк Технологии развивал web-приложение «Кредиты» для корпоративных сервисов, переводил UI с deprecated API Vaadin, внедрял S3-хранилище, расширял чат, дорабатывал отчетность и снижал технический долг."
   },
   {
-    id: "frontend-nikita-r",
-    name: "Никита Р.",
-    category: "Frontend",
-    grade: "Middle",
-    specialization: "Frontend: React",
-    location: "РФ",
-    rate: "1700 ₽/ч",
-    experience: "3+ лет",
-    status: "Свободен",
-    availableFrom: "asap",
-    cv: "https://disk.360.yandex.ru/i/u5ToO7iV8KB_yg",
-    manager: managers.anastasia,
-    letter: "Frontend-разработчик с опытом более 4 лет в информационных технологиях и HR-Tech, также имеющий практический fullstack-опыт. Уверенно работает с JavaScript, TypeScript, React, Vite, Webpack, Sass, Less, Vitest, AntDesign, MUI, React Bootstrap, BEM, Chrome DevTools, React Developer Tools, REST API, Jira, Confluence и Git. Имеет опыт разработки административных кабинетов, таблиц с поиском, пагинацией и фильтрацией, интерактивных форм, загрузки и обработки изображений, интеграции с API и настройки Nginx для Next.js-приложений. На проектах «Все моторы», NRB и «Мой Край» проектировал frontend- и backend-части, реализовывал REST API, работал с PostgreSQL и оптимизировал UX административных интерфейсов.",
+    "id": "backend-3",
+    "name": "Юрий Т.",
+    "category": "Backend",
+    "grade": "Middle+",
+    "specialization": "Backend: Java",
+    "location": "РФ",
+    "rate": "2750 ₽/ч",
+    "experience": "12+ лет",
+    "status": "Свободен",
+    "availableFrom": "asap",
+    "cv": "https://disk.360.yandex.ru/i/Sh6MYUPcJSoO1Q",
+    "manager": managers.ekaterina,
+    "letter": "Java-разработчик с опытом 12 лет в банках, финтехе и электронном документообороте. Уверенно работает с Java, Kotlin, Spring Framework, Spring Boot, Hibernate, JDBC, JOOQ, SQL, PostgreSQL, Oracle, MSSQL, Liquibase, MongoDB, Maven, Jenkins, Gradle, JUnit, Mockito, Kotest, SOAP, REST, Kafka, Docker, Kubernetes, Jira, Confluence и Git. Имеет опыт разработки и сопровождения банковских микросервисов, интеграций с внутренними системами банка, бизнес-оркестрации и повышения надежности сервисов. На проектах ВТБ, Хоум Банка и БСС занимался импортозамещением, разработкой сервисов по карточным операциям и депозитам ЮЛ, развитием чат- и голосовых ботов, а также ДБО для юридических лиц."
   },
   {
-    id: "frontend-stanislav-p",
-    name: "Станистав П.",
-    category: "Frontend",
-    grade: "Middle",
-    specialization: "Frontend: React",
-    location: "РФ",
-    rate: "1700 ₽/ч",
-    experience: "3+ лет",
-    status: "Свободен",
-    availableFrom: "asap",
-    cv: "https://disk.360.yandex.ru/d/o7mvEeMPk8kWVw",
-    manager: managers.anastasia,
-    letter: "Frontend-разработчик с опытом 4 года 9 месяцев в проектах для туризма, маркетплейсов и организации рабочих процессов. Уверенно работает с JavaScript, TypeScript, React, React Hook Form, Redux, Material UI, Ant Design, Axios, HTML, CSS, БЭМ, Jest, React Testing Library, Cypress, PostgreSQL, Vite, Webpack, Zustand, REST, GraphQL, Docker, GitLab, Postman, Node.js, Jira и Confluence. Имеет опыт разработки интерфейсов админ-панелей, таблиц с поиском, пагинацией и фильтрацией, форм создания и редактирования продуктов, модальных окон, ролевых ограничений и работы с изображениями через Canvas. На проектах Marketplace TN, «Мой Край» и АИС разрабатывал React-интерфейсы, покрывал ключевые модули тестами и оптимизировал работу пользовательских сценариев.",
+    "id": "frontend-1",
+    "name": "Злата И.",
+    "category": "Frontend",
+    "grade": "Middle",
+    "specialization": "Frontend: React",
+    "location": "РФ",
+    "rate": "1400 ₽/ч",
+    "experience": "4+ лет",
+    "status": "Свободен",
+    "availableFrom": "по запросу",
+    "cv": "https://disk.360.yandex.ru/i/aBmd5wqELaCwiA",
+    "manager": managers.anastasia,
+    "letter": "Frontend-разработчик с опытом 4 года в разработке веб-интерфейсов и работе в распределенных командах. Уверенно работает с JavaScript, TypeScript, React, Next.js, Webpack, Vite, SCSS, CSS Modules, React Hook Form, Material UI, Framer Motion, Swiper, Zustand, Redux Toolkit, Axios, WebSocket, Swagger, Figma, Jira, GitLab и Confluence. Имеет опыт разработки сложных форм, UI-компонентов, клиентской интеграции с REST API и WebSocket, обработки асинхронных статусов, ошибок и ретраев. На проекте ВТБ ЭДО разрабатывала интерфейсы для создания, обработки и подписания документов, реализовывала массовую загрузку файлов, chunk upload, работу с CAdES plugin API и пользовательскими сертификатами."
   },
+  {
+    "id": "frontend-2",
+    "name": "Роман М.",
+    "category": "Frontend",
+    "grade": "Senior",
+    "specialization": "Frontend: React",
+    "location": "РФ",
+    "rate": "2400 ₽/ч",
+    "experience": "7+ лет",
+    "status": "Свободен",
+    "availableFrom": "по запросу",
+    "cv": "https://disk.360.yandex.ru/i/OlTze6ECphCDzQ",
+    "manager": managers.anastasia,
+    "letter": "Ведущий Frontend-разработчик с опытом более 7 лет в банковском, финтех- и логистическом доменах. Уверенно работает с TypeScript, JavaScript, React, React Native, NestJS, Express, Electron, Angular, FSD, Redux, Effector, PostgreSQL, TypeORM, Webpack, Vite, Jest, Enzyme, Cypress, REST API, Socket.IO, Docker, Material UI, Tailwind, Styled-Components и React Hook Form. Имеет опыт работы в Scrum-командах от 2 до 30 человек, включая роль тимлида, настройку unit- и e2e-тестов и развитие сложных интерфейсов. На проектах NRB и Сбербанка разрабатывал административные панели, адаптивные таблицы, формы, интеграции с API, внедрял Feature-Sliced Design, переходил с Redux на Effector и оптимизировал поддержку frontend-кода."
+  },
+  {
+    "id": "frontend-3",
+    "name": "Никита Р.",
+    "category": "Frontend",
+    "grade": "Middle",
+    "specialization": "Frontend: React",
+    "location": "РФ",
+    "rate": "1700 ₽/ч",
+    "experience": "3+ лет",
+    "status": "Свободен",
+    "availableFrom": "asap",
+    "cv": "https://disk.360.yandex.ru/i/Ml86tkjV4IhkUQ",
+    "manager": managers.anastasia,
+    "letter": "Frontend-разработчик с опытом более 4 лет в информационных технологиях и HR-Tech, также имеющий практический fullstack-опыт. Уверенно работает с JavaScript, TypeScript, React, Vite, Webpack, Sass, Less, Vitest, AntDesign, MUI, React Bootstrap, BEM, Chrome DevTools, React Developer Tools, REST API, Jira, Confluence и Git. Имеет опыт разработки административных кабинетов, таблиц с поиском, пагинацией и фильтрацией, интерактивных форм, загрузки и обработки изображений, интеграции с API и настройки Nginx для Next.js-приложений. На проектах «Все моторы», NRB и «Мой Край» проектировал frontend- и backend-части, реализовывал REST API, работал с PostgreSQL и оптимизировал UX административных интерфейсов."
+  },
+  {
+    "id": "frontend-4",
+    "name": "Станислав П.",
+    "category": "Frontend",
+    "grade": "Middle",
+    "specialization": "Frontend: React",
+    "location": "РФ",
+    "rate": "1700 ₽/ч",
+    "experience": "3+ лет",
+    "status": "Свободен",
+    "availableFrom": "asap",
+    "cv": "https://disk.360.yandex.ru/d/o7mvEeMPk8kWVw",
+    "manager": managers.anastasia,
+    "letter": "Frontend-разработчик с опытом 4 года 9 месяцев в проектах для туризма, маркетплейсов и организации рабочих процессов. Уверенно работает с JavaScript, TypeScript, React, React Hook Form, Redux, Material UI, Ant Design, Axios, HTML, CSS, БЭМ, Jest, React Testing Library, Cypress, PostgreSQL, Vite, Webpack, Zustand, REST, GraphQL, Docker, GitLab, Postman, Node.js, Jira и Confluence. Имеет опыт разработки интерфейсов админ-панелей, таблиц с поиском, пагинацией и фильтрацией, форм создания и редактирования продуктов, модальных окон, ролевых ограничений и работы с изображениями через Canvas. На проектах Marketplace TN, «Мой Край» и АИС разрабатывал React-интерфейсы, покрывал ключевые модули тестами и оптимизировал работу пользовательских сценариев."
+  },
+  {
+    "id": "ios-1",
+    "name": "Ульяна Г.",
+    "category": "IOS",
+    "grade": "Middle",
+    "specialization": "IOS: IOS",
+    "location": "РФ",
+    "rate": "1500 ₽/ч",
+    "experience": "4+ лет",
+    "status": "Свободен",
+    "availableFrom": "по запросу",
+    "cv": "https://disk.360.yandex.ru/i/I3HaV4jfALffew",
+    "manager": managers.anastasia,
+    "letter": "iOS-разработчик с опытом более 4 лет в мобильной разработке и работе в распределенных командах. Уверенно работает со Swift, UIKit, SwiftUI, MVVM, Clean Swift, Combine, Async/Await, CoreData, SwiftData, Firebase, REST, GraphQL, TestFlight и App Store Connect. Имеет практический опыт разработки корпоративного маркетплейса и мобильных приложений для внутреннего туризма, включая поиск мест и событий, маршруты, бронирование отелей и авиабилетов. На проектах реализовывала новые функции, проектировала архитектуру модулей, покрывала ключевую логику unit-тестами, участвовала в релизах, код-ревью и интеграциях с HealthKit, StoreKit, Firebase, Яндекс.Картами, AppMetrica и внешними OAuth-сервисами."
+  },
+  {
+    "id": "design-1",
+    "name": "Дарья И.",
+    "category": "Design",
+    "grade": "Middle+",
+    "specialization": "Design: UX / UI",
+    "location": "РФ",
+    "rate": "1300 ₽/ч",
+    "experience": "3+ лет",
+    "status": "Свободен",
+    "availableFrom": "по согласованию",
+    "cv": "https://disk.360.yandex.ru/i/1tU0dDBUv1Dxkg",
+    "manager": managers.anastasia,
+    "letter": "UX/UI-дизайнер с опытом более 4 лет в финтехе, HR, медиа и развлекательных продуктах. Уверенно работает с Figma, Miro, Photoshop, Illustrator, Jira, Kaiten, Confluence и презентационными материалами. Имеет опыт проектирования пользовательских сценариев, информационной архитектуры, интерактивных прототипов, UI-kit и дизайн-систем для сложных B2B- и B2C-сервисов. На проектах ВТБ Специализированный депозитарий, NRB, Reliab Connect и АИС HR разрабатывала интерфейсы веб-платформ, мобильных приложений и внутренних сервисов, сопровождала дизайн от идеи до релиза, защищала решения перед заказчиками и работала в связке с аналитиками, разработчиками и продакт-менеджерами."
+  },
+  {
+    "id": "devops-1",
+    "name": "Данил В.",
+    "category": "DevOps",
+    "grade": "Middle",
+    "specialization": "DevOps: Специалист техподдержки L3",
+    "location": "РФ",
+    "rate": "1500 ₽/ч",
+    "experience": "3+ лет",
+    "status": "Свободен",
+    "availableFrom": "по запросу",
+    "cv": "https://disk.360.yandex.ru/i/-YvLoErQ7kktDQ",
+    "manager": managers.ekaterina,
+    "letter": "Специалист технического сопровождения и системный администратор с опытом 3 года в поддержке, сопровождении и DevOps-задачах. Уверенно работает с Docker, Docker Compose, GitHub Actions, GitLab CI, PostgreSQL, MongoDB, NGINX, Kubernetes, Prometheus, Grafana, Redis, Celery, Python, Bash, YAML, JSON, Postman и Swagger. Имеет практический опыт сопровождения интеграционных сервисов, мониторинга, анализа логов и диагностики инцидентов. На проектах ЛАНИТ и Moodle Cluster работал с ЕБП, Kafka, OpenSearch, Pimcore, REST API, SOAP, XML/XSD-схемами, настраивал мониторинг Prometheus + Node Exporter, собирал дашборды Grafana и готовил техническую документацию для команды."
+  },
+  {
+    "id": "pm-1",
+    "name": "Юлия Р.",
+    "category": "PM",
+    "grade": "Senior",
+    "specialization": "PM: Руководитель проектов",
+    "location": "РФ",
+    "rate": "2400 ₽/ч",
+    "experience": "6+ лет",
+    "status": "Свободен",
+    "availableFrom": "по запросу",
+    "cv": "https://disk.360.yandex.ru/i/5ORoRmYwZj5EPw",
+    "manager": managers.anastasia,
+    "letter": "IT Project Manager с опытом более 6 лет в HR-Tech, Legal-Tech, Ed-Tech, GameDev и ритейле. Уверенно работает с Jira, Redmine, GanttPRO, Miro, Яндекс.Трекером, Confluence, MS Office, BPMN, Figma, а также с Agile, Scrum, Kanban и Waterfall-подходами. Имеет опыт полного цикла управления проектами: от пресейла, сбора требований и оценки трудоемкости до delivery, приемки, отчетности и закрывающих документов. В Пятом Элементе управляла портфелем продуктов NRB, Burger King и ВНТ «Водокомфорт», координировала команду до 15 специалистов, вела roadmap, backlog, риски, бюджеты, демо, CustDev и внедряла AI-инструменты в проектные процессы."
+  }
 ];
 
 const benchBody = document.querySelector("#bench-body");
@@ -344,7 +449,41 @@ function renderBench() {
     const emptyCell = document.createElement("td");
     emptyCell.colSpan = 9;
     emptyCell.className = "empty-state";
-    emptyCell.textContent = "Нет специалистов, соответствующих фильтрам";
+
+    const emptyWrap = document.createElement("div");
+    emptyWrap.className = "empty-state-inner";
+
+    const emptyIcon = document.createElement("div");
+    emptyIcon.className = "empty-state-icon";
+    emptyIcon.textContent = "🔍";
+
+    const emptyTitle = document.createElement("p");
+    emptyTitle.className = "empty-state-title";
+    emptyTitle.textContent = "Специалисты не найдены";
+
+    const emptyHint = document.createElement("p");
+    emptyHint.className = "empty-state-hint";
+    emptyHint.textContent =
+      "Попробуйте изменить параметры фильтрации или сбросить все фильтры";
+
+    const resetBtn = document.createElement("button");
+    resetBtn.className = "filter-chip active";
+    resetBtn.type = "button";
+    resetBtn.textContent = "Сбросить фильтры";
+    resetBtn.style.marginTop = "8px";
+    resetBtn.addEventListener("click", () => {
+      activeFilters.role = null;
+      activeFilters.specialization = null;
+      activeFilters.grade = null;
+      renderFilters();
+      renderBench();
+    });
+
+    emptyWrap.appendChild(emptyIcon);
+    emptyWrap.appendChild(emptyTitle);
+    emptyWrap.appendChild(emptyHint);
+    emptyWrap.appendChild(resetBtn);
+    emptyCell.appendChild(emptyWrap);
     emptyRow.appendChild(emptyCell);
     benchBody.appendChild(emptyRow);
     return;
