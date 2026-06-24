@@ -358,7 +358,7 @@ function createSpecialistRow(specialist) {
 
 const activeFilters = {
   role: null,
-  specialization: null,
+  specialization: [], // массив для мультивыбора
   grade: [], // массив для мультивыбора
 };
 
@@ -377,7 +377,7 @@ function filterSpecialists() {
   return specialists.filter((s) => {
     const specParts = splitSpecialization(s.specialization);
     if (activeFilters.role && specParts.role !== activeFilters.role) return false;
-    if (activeFilters.specialization && specParts.specialization !== activeFilters.specialization) return false;
+    if (activeFilters.specialization.length > 0 && !activeFilters.specialization.includes(specParts.specialization)) return false;
     if (activeFilters.grade.length > 0 && !activeFilters.grade.includes(s.grade)) return false;
     return true;
   });
@@ -406,7 +406,7 @@ function renderFilters() {
     return;
   }
 
-  // Фильтр «Стек» — только когда выбрана роль
+  // Фильтр «Стек» — только когда выбрана роль (мультивыбор)
   const specValues = getFilteredValues("specialization", { role: activeFilters.role });
   renderFilterGroup(toolbar, "specialization", "Стек", specValues, true);
 
@@ -425,11 +425,12 @@ function renderFilterGroup(toolbar, key, label, values, enabled) {
   labelEl.className = "filter-group-label";
   labelEl.textContent = label;
 
-  // Для грейда показываем счётчик выбранных
-  if (key === "grade" && enabled && activeFilters.grade.length > 0) {
+  // Показываем счётчик выбранных для мультивыборов (стек и грейд)
+  const multiKeys = ["specialization", "grade"];
+  if (multiKeys.includes(key) && enabled && activeFilters[key].length > 0) {
     const count = document.createElement("span");
     count.className = "filter-count";
-    count.textContent = activeFilters.grade.length;
+    count.textContent = activeFilters[key].length;
     labelEl.appendChild(count);
   }
 
@@ -444,8 +445,8 @@ function renderFilterGroup(toolbar, key, label, values, enabled) {
     chip.type = "button";
     chip.textContent = value;
 
-    const isSelected = key === "grade"
-      ? activeFilters.grade.includes(value)
+    const isSelected = multiKeys.includes(key)
+      ? activeFilters[key].includes(value)
       : activeFilters[key] === value;
 
     chip.setAttribute("aria-pressed", isSelected ? "true" : "false");
@@ -459,24 +460,20 @@ function renderFilterGroup(toolbar, key, label, values, enabled) {
       chip.setAttribute("disabled", "true");
     } else {
       chip.addEventListener("click", () => {
-        if (key === "grade") {
-          // Мультивыбор для грейда
-          const idx = activeFilters.grade.indexOf(value);
+        if (multiKeys.includes(key)) {
+          // Мультивыбор для стека и грейда
+          const idx = activeFilters[key].indexOf(value);
           if (idx === -1) {
-            activeFilters.grade.push(value);
+            activeFilters[key].push(value);
           } else {
-            activeFilters.grade.splice(idx, 1);
+            activeFilters[key].splice(idx, 1);
           }
         } else {
-          // Одиночный выбор для роли и стека
+          // Одиночный выбор для роли
           activeFilters[key] = activeFilters[key] === value ? null : value;
           // При смене роли — сбрасываем стек и грейд
           if (key === "role") {
-            activeFilters.specialization = null;
-            activeFilters.grade = [];
-          }
-          // При смене стека — сбрасываем грейд
-          if (key === "specialization") {
+            activeFilters.specialization = [];
             activeFilters.grade = [];
           }
         }
@@ -503,7 +500,7 @@ function getFilteredValues(key, activeRoleAndSpec) {
 
     // Проверяем соответствие уже выбранным фильтрам
     if (activeRoleAndSpec.role && specParts.role !== activeRoleAndSpec.role) return;
-    if (activeRoleAndSpec.specialization && specParts.specialization !== activeRoleAndSpec.specialization) return;
+    if (activeRoleAndSpec.specialization && activeRoleAndSpec.specialization.length > 0 && !activeRoleAndSpec.specialization.includes(specParts.specialization)) return;
 
     if (key === "role") values.add(specParts.role);
     else if (key === "specialization") values.add(specParts.specialization);
@@ -550,7 +547,7 @@ function renderBench() {
     resetBtn.style.marginTop = "8px";
     resetBtn.addEventListener("click", () => {
       activeFilters.role = null;
-      activeFilters.specialization = null;
+      activeFilters.specialization = [];
       activeFilters.grade = [];
       renderFilters();
       renderBench();
