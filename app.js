@@ -302,6 +302,10 @@ function capitalizeFirstLetter(value) {
     return value;
   }
 
+  if (value === "iOS") {
+    return value;
+  }
+
   return value.charAt(0).toUpperCase() + value.slice(1);
 }
 
